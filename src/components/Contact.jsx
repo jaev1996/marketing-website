@@ -1,0 +1,215 @@
+import { FiSend, FiMail, FiPhone, FiClock, FiCheckCircle, FiMapPin } from "react-icons/fi";
+import { useState } from "react";
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [activeMethod, setActiveMethod] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Lógica de envío (ej: Formspree, API)
+    console.log("Formulario enviado:", formData);
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 5000);
+  };
+
+  const contactMethods = [
+    {
+      icon: <FiMail className="w-5 h-5" />,
+      title: "Correo Electrónico",
+      details: "contacto@agencix.com",
+      action: () => window.location.href = "mailto:contacto@agencix.com",
+      color: "bg-purple-100 text-purple-800"
+    },
+    {
+      icon: <FiPhone className="w-5 h-5" />,
+      title: "WhatsApp",
+      details: "+58 412 5555555",
+      action: () => window.open("https://wa.me/584125555555", "_blank"),
+      color: "bg-green-100 text-green-800"
+    },
+    {
+      icon: <FiClock className="w-5 h-5" />,
+      title: "Horario de Atención",
+      details: "Lun-Vie: 9:00 AM - 5:00 PM\nSáb: 9:00 AM - 12:00 PM",
+      action: null,
+      color: "bg-blue-100 text-blue-800"
+    },
+    {
+      icon: <FiMapPin className="w-5 h-5" />,
+      title: "Ubicación",
+      details: "Av. Principal, Torre Empresarial, Piso 10, Caracas",
+      action: null,
+      color: "bg-gray-100 text-gray-800"
+    }
+  ];
+
+  return (
+    <section id="contact" className="py-20 bg-white text-gray-950">
+      <div className="container mx-auto px-4">
+        {/* Encabezado */}
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4">
+            Contacto Directo
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Hablemos de tu <span className="text-purple-600">proyecto</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Elige tu método preferido o envíanos un mensaje directo
+          </p>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Columna de métodos de contacto (mismo ancho que el formulario) */}
+          <div className="lg:w-1/2">
+            <div className="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-200 h-full">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                <FiCheckCircle className="text-purple-600" />
+                <span>Contacto Rápido</span>
+              </h3>
+              
+              <div className="space-y-4">
+                {contactMethods.map((method, index) => (
+                  <div
+                    key={index}
+                    className={`p-4 rounded-lg transition-all cursor-pointer ${method.color} ${method.action ? 'hover:shadow-md' : ''} ${activeMethod === index ? 'ring-2 ring-purple-500' : ''}`}
+                    onClick={() => {
+                      if (method.action) method.action();
+                      setActiveMethod(index);
+                    }}
+                    onMouseEnter={() => setActiveMethod(index)}
+                    onMouseLeave={() => setActiveMethod(null)}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className={`p-3 rounded-full ${method.color.replace('text', 'bg').replace('800', '100')}`}>
+                        {method.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-bold">{method.title}</h4>
+                        <p className="text-sm whitespace-pre-line">{method.details}</p>
+                        {method.action && (
+                          <span className="inline-block mt-2 text-xs font-medium text-purple-600">
+                            Haz clic para contactar
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Información adicional */}
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <h4 className="font-bold mb-3">¿Por qué elegirnos?</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600">✓</span>
+                    <span>Respuesta en menos de 24 horas</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600">✓</span>
+                    <span>Consultoría inicial sin costo</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600">✓</span>
+                    <span>Soporte técnico permanente</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Formulario */}
+          <div className="lg:w-1/2">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 h-full">
+              {isSubmitted ? (
+                <div className="text-center py-8 h-full flex flex-col justify-center">
+                  <FiCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold mb-2">¡Mensaje enviado!</h3>
+                  <p className="text-gray-600 mb-6">Te contactaremos en menos de 24 horas.</p>
+                  <button 
+                    onClick={() => setIsSubmitted(false)}
+                    className="bg-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-purple-700 transition mx-auto"
+                  >
+                    Nuevo mensaje
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <h3 className="text-2xl font-bold mb-6">Formulario de Contacto</h3>
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Nombre completo*</label>
+                      <input 
+                        type="text" 
+                        id="name" 
+                        value={formData.name}
+                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" 
+                        placeholder="Ej: María González" 
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Correo electrónico*</label>
+                      <input 
+                        type="email" 
+                        id="email" 
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" 
+                        placeholder="Ej: contacto@tudominio.com" 
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Mensaje*</label>
+                      <textarea 
+                        id="message" 
+                        rows="4" 
+                        value={formData.message}
+                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" 
+                        placeholder="Describe tu proyecto, necesidades y objetivos..."
+                        required
+                      ></textarea>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <input 
+                        type="checkbox" 
+                        id="privacy" 
+                        className="mt-1 w-4 h-4 text-purple-600 rounded focus:ring-purple-500" 
+                        required
+                      />
+                      <label htmlFor="privacy" className="ml-2 text-sm text-gray-600">
+                        Acepto la política de privacidad y el tratamiento de mis datos
+                      </label>
+                    </div>
+                    
+                    <button 
+                      type="submit" 
+                      className="w-full bg-purple-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-purple-700 transition-all shadow hover:shadow-md flex items-center justify-center gap-2"
+                    >
+                      <FiSend /> Enviar mensaje
+                    </button>
+                  </form>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
