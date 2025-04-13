@@ -1,8 +1,9 @@
 import { FiStar, FiPlay, FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Testimonials = () => {
   const [playingVideo, setPlayingVideo] = useState(null);
+  const [vimeoPlayers, setVimeoPlayers] = useState({});
 
   const testimonials = [
     {
@@ -10,36 +11,61 @@ const Testimonials = () => {
       role: "CEO de ModaFashion",
       quote: "Increíble trabajo con nuestra campaña en Instagram. En 3 meses aumentamos un 150% en ventas.",
       image: "https://randomuser.me/api/portraits/men/30.jpg",
-      video: "https://example.com/videos/testimonio1.mp4", // Reemplazar con URL real
+      video: "https://vimeo.com/1075128095",
       thumbnail: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       rating: 5,
       results: ["+150% ventas", "+300% comunidad"]
     },
     {
-      name: "Carlos Pérez",
-      role: "CEO de ModaFashion",
-      quote: "Increíble trabajo con nuestra campaña en Instagram. En 3 meses aumentamos un 150% en ventas.",
+      name: "María González",
+      role: "Directora de Marketing",
+      quote: "La estrategia de contenidos revolucionó nuestro engagement en redes sociales.",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      video: "https://vimeo.com/1075134202",
+      thumbnail: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      rating: 5,
+      results: ["+200% engagement", "+120% seguidores"]
+    },
+    {
+      name: "Javier Rodríguez",
+      role: "Fundador de TechStart",
+      quote: "El rediseño de nuestra identidad visual capturó perfectamente nuestra esencia innovadora.",
       image: "https://randomuser.me/api/portraits/men/32.jpg",
-      video: "https://example.com/videos/testimonio1.mp4", // Reemplazar con URL real
-      thumbnail: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      video: "https://vimeo.com/1075134212",
+      thumbnail: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       rating: 5,
-      results: ["+150% ventas", "+300% comunidad"]
-    },
-    {
-      name: "Carlos Pérez",
-      role: "CEO de ModaFashion",
-      quote: "Increíble trabajo con nuestra campaña en Instagram. En 3 meses aumentamos un 150% en ventas.",
-      image: "https://randomuser.me/api/portraits/men/31.jpg",
-      video: "https://example.com/videos/testimonio1.mp4", // Reemplazar con URL real
-      thumbnail: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      rating: 5,
-      results: ["+150% ventas", "+300% comunidad"]
-    },
-    // ... otros testimonios
+      results: ["+90% reconocimiento", "Premio al mejor diseño"]
+    }
   ];
+  useEffect(() => {
+    // Cargar el SDK de Vimeo solo si hay videos para reproducir
+    if (playingVideo !== null) {
+      const loadVimeoSDK = () => {
+        const script = document.createElement('script');
+        script.src = 'https://player.vimeo.com/api/player.js';
+        script.async = true;
+        document.body.appendChild(script);
+      };
+
+      if (!window.Vimeo) {
+        loadVimeoSDK();
+      }
+    }
+  }, [playingVideo]);
 
   const handlePlayVideo = (index) => {
     setPlayingVideo(index);
+  };
+
+  const handleCloseVideo = () => {
+    setPlayingVideo(null);
+  };
+
+  // Extrae el ID de la URL de Vimeo
+  const getVimeoId = (url) => {
+    const regExp = /vimeo\.com\/([\d]+(?:\/[a-zA-Z0-9]+)?)/i; // Captura el ID y el hash si están presentes
+    const match = url.match(regExp);
+    return match ? match[1] : null; // Devuelve el ID completo (incluyendo el hash si existe)
   };
 
   return (
@@ -68,14 +94,32 @@ const Testimonials = () => {
               {/* Sección de video (arriba) */}
               <div className="relative h-48 bg-gray-800">
                 {playingVideo === index ? (
-                  <video
-                    controls
-                    autoPlay
-                    className="w-full h-full object-cover"
-                    onEnded={() => setPlayingVideo(null)}
-                  >
-                    <source src={testimonial.video} type="video/mp4" />
-                  </video>
+                  <div className="w-full h-full">
+                    <div style={{ padding: '56.25% 0 0 0' }}>
+                      <iframe
+                        src={`https://player.vimeo.com/video/${getVimeoId(testimonial.video)}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+                        style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%'
+                        }}
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        allowFullScreen
+                        title={`Video testimonial de ${testimonial.name}`}
+                      ></iframe>
+                    </div>
+                    <button
+                      onClick={handleCloseVideo}
+                      className="absolute top-2 right-2 bg-black/50 text-white rounded-full p-2 z-10"
+                      aria-label="Cerrar video"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
                 ) : (
                   <>
                     <img
@@ -97,7 +141,7 @@ const Testimonials = () => {
                 )}
               </div>
 
-              {/* Contenido del testimonio (abajo) */}
+              {/* Resto del código del testimonio permanece igual */}
               <div className="p-6">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
