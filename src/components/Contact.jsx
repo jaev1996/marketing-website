@@ -1,5 +1,6 @@
 import { FiSend, FiMail, FiPhone, FiClock, FiCheckCircle, FiMapPin } from "react-icons/fi";
 import { useState } from "react";
+import { Resend } from 'resend';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,14 +9,39 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [activeMethod, setActiveMethod] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Lógica de envío (ej: Formspree, API)
-    console.log("Formulario enviado:", formData);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('./api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al enviar el email');
+      }
+
+      const data = await response.json();
+      console.log('Email enviado:', data);
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (err) {
+      console.error('Error al enviar el email:', err);
+      setError('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactMethods = [
@@ -73,7 +99,7 @@ const Contact = () => {
                 <FiCheckCircle className="text-purple-600" />
                 <span>Contacto Rápido</span>
               </h3>
-              
+
               <div className="space-y-4">
                 {contactMethods.map((method, index) => (
                   <div
@@ -133,7 +159,7 @@ const Contact = () => {
                   <FiCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold mb-2">¡Mensaje enviado!</h3>
                   <p className="text-gray-600 mb-6">Te contactaremos en menos de 24 horas.</p>
-                  <button 
+                  <button
                     onClick={() => setIsSubmitted(false)}
                     className="bg-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-purple-700 transition mx-auto"
                   >
@@ -146,57 +172,57 @@ const Contact = () => {
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Nombre completo*</label>
-                      <input 
-                        type="text" 
-                        id="name" 
+                      <input
+                        type="text"
+                        id="name"
                         value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" 
-                        placeholder="Ej: María González" 
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                        placeholder="Ej: María González"
                         required
                       />
                     </div>
-                    
+
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Correo electrónico*</label>
-                      <input 
-                        type="email" 
-                        id="email" 
+                      <input
+                        type="email"
+                        id="email"
                         value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" 
-                        placeholder="Ej: contacto@tudominio.com" 
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                        placeholder="Ej: contacto@tudominio.com"
                         required
                       />
                     </div>
-                    
+
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Mensaje*</label>
-                      <textarea 
-                        id="message" 
-                        rows="4" 
+                      <textarea
+                        id="message"
+                        rows="4"
                         value={formData.message}
-                        onChange={(e) => setFormData({...formData, message: e.target.value})}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" 
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
                         placeholder="Describe tu proyecto, necesidades y objetivos..."
                         required
                       ></textarea>
                     </div>
-                    
+
                     <div className="flex items-start">
-                      <input 
-                        type="checkbox" 
-                        id="privacy" 
-                        className="mt-1 w-4 h-4 text-purple-600 rounded focus:ring-purple-500" 
+                      <input
+                        type="checkbox"
+                        id="privacy"
+                        className="mt-1 w-4 h-4 text-purple-600 rounded focus:ring-purple-500"
                         required
                       />
                       <label htmlFor="privacy" className="ml-2 text-sm text-gray-600">
                         Acepto la política de privacidad y el tratamiento de mis datos
                       </label>
                     </div>
-                    
-                    <button 
-                      type="submit" 
+
+                    <button
+                      type="submit"
                       className="w-full bg-purple-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-purple-700 transition-all shadow hover:shadow-md flex items-center justify-center gap-2"
                     >
                       <FiSend /> Enviar mensaje
