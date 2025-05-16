@@ -7,25 +7,27 @@ const About = () => {
             <div className="lg:w-1/2 space-y-8">
               {/* Badge de introducción */}
               <span className="inline-block px-4 py-2 bg-purple-600/10 text-purple-400 rounded-full text-sm font-semibold">
-                Desde 2020
+                ¡Eleva tu Presencia Digital con Nosotros!
               </span>
   
               <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                Más que una agencia, somos tu <span className="text-purple-400">aliado estratégico</span>
+                ¿Quienes Somos?
               </h2>
-  
+ 
               <div className="space-y-6">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Con sede en Venezuela y alcance global, ayudamos a empresas a conquistar mercados internacionales mediante estrategias digitales <strong>medibles y escalables</strong>.
+                  En un mundo saturado de promesas vacías y falsas expectativas, en Eleva nos destacamos por nuestra transparencia, y compromiso firme con tu marca.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Nuestro enfoque se basa en desarrollar ideas creativas que no solo captan atención, si no que convierten. Porque entendemos que lo realmente importante son los resultados tangibles y medibles.
                 </p>
   
                 {/* Lista de valores con iconos */}
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
                     "Transparencia en resultados",
-                    "Enfoque data-driven",
                     "Equipo certificado",
-                    "Soporte 24/7"
+                    "Soporte y Atencion en Instantes"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
                       <svg className="w-5 h-5 text-purple-400 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,12 +61,6 @@ const About = () => {
                   className="w-full h-auto object-cover aspect-video lg:aspect-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-purple-900/20"></div>
-              </div>
-  
-              {/* Sello de calidad (opcional) */}
-              <div className="absolute -bottom-6 -right-6 bg-white text-gray-900 px-6 py-3 rounded-lg shadow-lg border border-purple-300 hidden lg:block">
-                <p className="font-bold text-sm">Certificados por:</p>
-                <p className="text-xs">Google Partners • Meta Blueprint</p>
               </div>
             </div>
           </div>
