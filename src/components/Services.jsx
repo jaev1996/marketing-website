@@ -19,20 +19,17 @@ const Services = () => {
         </div>
 
         {/* Grid de servicios con efecto flip */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group h-64 [perspective:1000px] transition-all duration-300"
+              className="group h-54 [perspective:1000px] transition-all duration-300"
             >
               <div className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 {/* Frente de la tarjeta */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-white rounded-xl shadow-lg p-6 flex items-center justify-center [backface-visibility:hidden]">
-                  <h3 className="text-2xl font-bold text-center text-gray-900">
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-950 rounded-xl shadow-lg p-6 flex items-center justify-center [backface-visibility:hidden]">
+                  <h3 className="text-3xl font-bold text-center text-white drop-shadow-[0_0_15px_rgba(124,58,237,0.7)]">
                     {service.title}
-                    <span className="block mt-2 text-sm text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                      Más info
-                    </span>
                   </h3>
                 </div>
 
@@ -40,14 +37,7 @@ const Services = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl shadow-lg p-6 flex flex-col items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
                   <div className="text-center text-white">
                     <p className="text-lg mb-4">{service.shortDescription}</p>
-                    <ul className="space-y-2 text-sm">
-                      {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-center justify-center">
-                          <span className="mr-2">✓</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+
                   </div>
                 </div>
               </div>
