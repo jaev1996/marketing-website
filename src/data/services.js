@@ -5,7 +5,6 @@ export const services = [
     features: [
       "Gestión de comunidades",
       "Planificación de contenido",
-      "Análisis de resultados",
       "Crecimiento orgánico"
     ]
   },
@@ -15,7 +14,6 @@ export const services = [
     features: [
       "Análisis de objetivos",
       "Estrategias personalizadas",
-      "Sesiones por Google Meet",
       "Plan de crecimiento"
     ]
   },
@@ -25,7 +23,6 @@ export const services = [
     features: [
       "Diseño de logo",
       "Identidad visual",
-      "Manual de marca",
       "Adaptación para redes"
     ]
   },
@@ -34,7 +31,6 @@ export const services = [
     shortDescription: "Creación de composiciones gráficas profesionales para tu marca.",
     features: [
       "Flyers y banners",
-      "Material POP",
       "Tarjetas de presentación",
       "Menús e invitaciones"
     ]
@@ -44,7 +40,6 @@ export const services = [
     shortDescription: "Generamos más ventas y visibilidad con tráfico calificado.",
     features: [
       "Segmentación avanzada",
-      "Análisis de ROI",
       "Gestión de presupuestos",
       "Optimización continua"
     ]
@@ -55,8 +50,7 @@ export const services = [
     features: [
       "Fotografía profesional",
       "Videos para redes",
-      "Edición creativa",
-      "Equipos profesionales"
+      "Edición creativa"
     ]
   },
   {
@@ -66,7 +60,6 @@ export const services = [
       "Diseño responsive",
       "Optimización SEO",
       "Integración con redes",
-      "Panel de administración"
     ]
   },
   {
@@ -75,8 +68,7 @@ export const services = [
     features: [
       "Fotografía de eventos",
       "Videoclips",
-      "Edición profesional",
-      "Entrega rápida"
+      "Edición profesional"
     ]
   },
   {
@@ -85,8 +77,7 @@ export const services = [
     features: [
       "Interacción directa",
       "Transmisión de mensaje",
-      "Experiencia cercana",
-      "Aumento de conversiones"
+      "Experiencia cercana"
     ]
   },
   {
@@ -95,8 +86,7 @@ export const services = [
     features: [
       "Campañas automatizadas",
       "Diseño de templates",
-      "Segmentación",
-      "Análisis de resultados"
+      "Segmentación"
     ]
   },
   {
@@ -105,8 +95,7 @@ export const services = [
     features: [
       "Respuestas inmediatas",
       "Configuración personalizada",
-      "Integración con redes",
-      "Ahorro de tiempo"
+      "Integración con redes"
     ]
   }
 ];
