@@ -6,7 +6,7 @@ const About = () => {
             {/* Columna de texto con jerarquía mejorada */}
             <div className="lg:w-1/2 space-y-8">
               {/* Badge de introducción */}
-              <span className="inline-block px-4 py-2 bg-purple-600/10 text-purple-400 rounded-full text-sm font-semibold">
+              <span className="inline-block px-4 py-2 bg-emerald-600/10 text-emerald-400 rounded-full text-sm font-semibold">
                 ¡Eleva tu Presencia Digital con Nosotros!
               </span>
   
@@ -30,7 +30,7 @@ const About = () => {
                     "Soporte y Atencion en Instantes"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
-                      <svg className="w-5 h-5 text-purple-400 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-emerald-400 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
                       <span className="text-gray-300">{item}</span>
@@ -42,11 +42,11 @@ const About = () => {
               {/* Datos estadísticos (opcional) */}
               <div className="flex flex-wrap gap-6 pt-4">
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-purple-400">+50</p>
+                  <p className="text-3xl font-bold text-emerald-400">+50</p>
                   <p className="text-gray-400 text-sm">Clientes satisfechos</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-purple-400">+120</p>
+                  <p className="text-3xl font-bold text-emerald-400">+120</p>
                   <p className="text-gray-400 text-sm">Proyectos exitosos</p>
                 </div>
               </div>
@@ -60,7 +60,7 @@ const About = () => {
                   alt="Equipo de AgenciaX trabajando" 
                   className="w-full h-auto object-cover aspect-video lg:aspect-auto"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-purple-900/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-emerald-900/20"></div>
               </div>
             </div>
           </div>

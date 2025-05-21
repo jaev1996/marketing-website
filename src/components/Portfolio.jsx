@@ -23,11 +23,11 @@ const Portfolio = () => {
       <div className="container mx-auto px-4">
         {/* Encabezado mejorado */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-600 rounded-full text-sm font-semibold mb-4">
             Nuestros Clientes
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Marcas que <span className="text-purple-600">Confían</span> en Nosotros
+            Marcas que <span className="text-emerald-600">Confían</span> en Nosotros
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Empresas líderes que han crecido con nuestras soluciones de marketing
@@ -40,7 +40,7 @@ const Portfolio = () => {
             {duplicatedClients.map((client, index) => (
               <div 
                 key={`${client.name}-${index}`}
-                className="group flex w-[180px] shrink-0 items-center justify-center rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-115 hover:shadow-md hover:shadow-purple-200/50 hover:border-purple-300 border border-gray-100"
+                className="group flex w-[180px] shrink-0 items-center justify-center rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-115 hover:shadow-md hover:shadow-emerald-200/50 hover:border-emerald-300 border border-gray-100"
               >
                 <div className="relative flex items-center justify-center h-26 w-full">
                   <img 
@@ -48,7 +48,7 @@ const Portfolio = () => {
                     alt={client.name} 
                     className="max-h-24 w-auto grayscale-[80%] opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                   />
-                  <div className="absolute inset-0 bg-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-emerald-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
             ))}
@@ -57,7 +57,7 @@ const Portfolio = () => {
 
         {/* CTA al final */}
         <div className="text-center mt-16">
-          <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-medium rounded-lg hover:from-purple-700 hover:to-purple-900 transition-all shadow-lg hover:shadow-purple-500/30">
+          <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-medium rounded-lg hover:from-emerald-700 hover:to-emerald-900 transition-all shadow-lg hover:shadow-emerald-500/30">
             Conoce nuestros servicios <FiArrowRight className="ml-2" />
           </button>
         </div>

@@ -19,28 +19,28 @@ const Navbar = () => {
           {/* Logo con efecto hover */}
           <a 
             href="#" 
-            className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-300 hover:to-purple-500 transition-all"
+            className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-emerald-700 hover:from-emerald-300 hover:to-emerald-500 transition-all"
           >
             AgenciaX
           </a>
 
           {/* Menú para desktop (oculto en móviles) */}
           <ul className="hidden md:flex space-x-8">
-            {["Servicios", "Nosotros", "Portafolio", "Contacto"].map((item, index) => (
+            {['Servicios', 'Nosotros', 'Portafolio', 'Contacto'].map((item, index) => (
               <li key={index}>
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className="relative group text-white hover:text-purple-300 transition-colors duration-200"
+                  className="relative group text-white hover:text-emerald-300 transition-colors duration-200"
                 >
                   {item}
-                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-emerald-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </li>
             ))}
           </ul>
 
           {/* Botón de contacto (solo desktop) */}
-          <button className="hidden md:block bg-gradient-to-r from-purple-600 to-purple-800 text-white px-6 py-2 rounded-lg font-medium hover:from-purple-700 hover:to-purple-900 transition-all shadow-lg hover:shadow-purple-600/30">
+          <button className="hidden md:block bg-gradient-to-r from-emerald-600 to-emerald-800 text-white px-6 py-2 rounded-lg font-medium hover:from-emerald-700 hover:to-emerald-900 transition-all shadow-lg hover:shadow-emerald-600/30">
             ¡Hablemos!
           </button>
 
@@ -60,13 +60,13 @@ const Navbar = () => {
         </div>
 
         {/* Menú móvil (animado) */}
-        <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${mobileMenuOpen ? "max-h-96 mt-4" : "max-h-0"}`}>
+        <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${mobileMenuOpen ? "max-h-96 mt-4" : "max-h-0"}`}> 
           <ul className="flex flex-col space-y-4 py-4">
-            {["Servicios", "Nosotros", "Portafolio", "Contacto"].map((item, index) => (
+            {['Servicios', 'Nosotros', 'Portafolio', 'Contacto'].map((item, index) => (
               <li key={index}>
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className="block py-2 text-white hover:text-purple-300 transition-colors"
+                  className="block py-2 text-white hover:text-emerald-300 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item}
@@ -74,7 +74,7 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <button className="w-full bg-gradient-to-r from-purple-600 to-purple-800 text-white px-4 py-2 rounded-lg font-medium mt-2">
+              <button className="w-full bg-gradient-to-r from-emerald-600 to-emerald-800 text-white px-4 py-2 rounded-lg font-medium mt-2 hover:from-emerald-700 hover:to-emerald-900">
                 Contactar
               </button>
             </li>

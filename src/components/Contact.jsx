@@ -50,7 +50,7 @@ const Contact = () => {
       title: "Correo Electrónico",
       details: "contacto@agencix.com",
       action: () => window.location.href = "mailto:contacto@agencix.com",
-      color: "bg-purple-100 text-purple-800"
+      color: "bg-emerald-100 text-emerald-800"
     },
     {
       icon: <FiPhone className="w-5 h-5" />,
@@ -80,11 +80,11 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         {/* Encabezado */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-600 rounded-full text-sm font-semibold mb-4">
             Contacto Directo
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Hablemos de tu <span className="text-purple-600">proyecto</span>
+            Hablemos de tu <span className="text-emerald-600">proyecto</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Elige tu método preferido o envíanos un mensaje directo
@@ -96,7 +96,7 @@ const Contact = () => {
           <div className="lg:w-1/2">
             <div className="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-200 h-full">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <FiCheckCircle className="text-purple-600" />
+                <FiCheckCircle className="text-emerald-600" />
                 <span>Contacto Rápido</span>
               </h3>
 
@@ -104,7 +104,7 @@ const Contact = () => {
                 {contactMethods.map((method, index) => (
                   <div
                     key={index}
-                    className={`p-4 rounded-lg transition-all cursor-pointer ${method.color} ${method.action ? 'hover:shadow-md' : ''} ${activeMethod === index ? 'ring-2 ring-purple-500' : ''}`}
+                    className={`p-4 rounded-lg transition-all cursor-pointer ${method.color} ${method.action ? 'hover:shadow-md' : ''} ${activeMethod === index ? 'ring-2 ring-emerald-500' : ''}`}
                     onClick={() => {
                       if (method.action) method.action();
                       setActiveMethod(index);
@@ -120,7 +120,7 @@ const Contact = () => {
                         <h4 className="font-bold">{method.title}</h4>
                         <p className="text-sm whitespace-pre-line">{method.details}</p>
                         {method.action && (
-                          <span className="inline-block mt-2 text-xs font-medium text-purple-600">
+                          <span className="inline-block mt-2 text-xs font-medium text-emerald-600">
                             Haz clic para contactar
                           </span>
                         )}
@@ -135,15 +135,15 @@ const Contact = () => {
                 <h4 className="font-bold mb-3">¿Por qué elegirnos?</h4>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600">✓</span>
+                    <span className="text-emerald-600">✓</span>
                     <span>Respuesta en menos de 24 horas</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600">✓</span>
+                    <span className="text-emerald-600">✓</span>
                     <span>Consultoría inicial sin costo</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600">✓</span>
+                    <span className="text-emerald-600">✓</span>
                     <span>Soporte técnico permanente</span>
                   </li>
                 </ul>
@@ -161,7 +161,7 @@ const Contact = () => {
                   <p className="text-gray-600 mb-6">Te contactaremos en menos de 24 horas.</p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="bg-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-purple-700 transition mx-auto"
+                    className="bg-emerald-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-emerald-700 transition mx-auto"
                   >
                     Nuevo mensaje
                   </button>
@@ -177,7 +177,7 @@ const Contact = () => {
                         id="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
                         placeholder="Ej: María González"
                         required
                       />
@@ -190,7 +190,7 @@ const Contact = () => {
                         id="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
                         placeholder="Ej: contacto@tudominio.com"
                         required
                       />
@@ -203,7 +203,7 @@ const Contact = () => {
                         rows="4"
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
                         placeholder="Describe tu proyecto, necesidades y objetivos..."
                         required
                       ></textarea>
@@ -213,7 +213,7 @@ const Contact = () => {
                       <input
                         type="checkbox"
                         id="privacy"
-                        className="mt-1 w-4 h-4 text-purple-600 rounded focus:ring-purple-500"
+                        className="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500"
                         required
                       />
                       <label htmlFor="privacy" className="ml-2 text-sm text-gray-600">
@@ -223,7 +223,7 @@ const Contact = () => {
 
                     <button
                       type="submit"
-                      className="w-full bg-purple-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-purple-700 transition-all shadow hover:shadow-md flex items-center justify-center gap-2"
+                      className="w-full bg-emerald-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-emerald-700 transition-all shadow hover:shadow-md flex items-center justify-center gap-2"
                     >
                       <FiSend /> Enviar mensaje
                     </button>

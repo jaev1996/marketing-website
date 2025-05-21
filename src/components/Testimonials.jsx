@@ -73,11 +73,11 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         {/* Encabezado */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-purple-600/10 text-purple-400 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-emerald-600/10 text-emerald-400 rounded-full text-sm font-semibold mb-4">
             Confían en nosotros
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Voces de <span className="text-purple-400">nuestros clientes</span>
+            Voces de <span className="text-emerald-400">nuestros clientes</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Experiencias reales que demuestran nuestro impacto
@@ -89,7 +89,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group relative bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-purple-500/30"
+              className="group relative bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-emerald-500/30"
             >
               {/* Sección de video (arriba) */}
               <div className="relative h-48 bg-gray-800">
@@ -133,7 +133,7 @@ const Testimonials = () => {
                       className="absolute inset-0 flex items-center justify-center"
                       aria-label="Reproducir video testimonio"
                     >
-                      <div className="bg-purple-600/90 hover:bg-purple-500 transition-all rounded-full p-4">
+                      <div className="bg-emerald-600/90 hover:bg-emerald-500 transition-all rounded-full p-4">
                         <FiPlay className="w-6 h-6" />
                       </div>
                     </button>
@@ -160,7 +160,7 @@ const Testimonials = () => {
                   {testimonial.results.map((result, i) => (
                     <span
                       key={i}
-                      className="inline-flex items-center px-3 py-1 bg-purple-600/10 text-purple-400 rounded-full text-xs font-medium"
+                      className="inline-flex items-center px-3 py-1 bg-emerald-600/10 text-emerald-400 rounded-full text-xs font-medium"
                     >
                       {result}
                     </span>
@@ -171,12 +171,12 @@ const Testimonials = () => {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full border-2 border-purple-500 mr-4"
+                    className="w-12 h-12 rounded-full border-2 border-emerald-500 mr-4"
                     loading="lazy"
                   />
                   <div>
                     <h4 className="font-bold text-white">{testimonial.name}</h4>
-                    <p className="text-sm text-purple-400">{testimonial.role}</p>
+                    <p className="text-sm text-emerald-400">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@ const Testimonials = () => {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-3 rounded-lg font-bold hover:from-purple-700 hover:to-purple-900 transition-all shadow-lg hover:shadow-purple-500/30"
+            className="inline-flex items-center bg-gradient-to-r from-emerald-600 to-emerald-800 text-white px-8 py-3 rounded-lg font-bold hover:from-emerald-700 hover:to-emerald-900 transition-all shadow-lg hover:shadow-emerald-500/30"
           >
             Habla con nuestro equipo
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

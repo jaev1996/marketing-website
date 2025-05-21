@@ -55,11 +55,11 @@ const Team = () => {
       <div className="container mx-auto px-4">
         {/* Encabezado con estilo consistente */}
         <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-semibold text-purple-600 bg-purple-100 rounded-full mb-4">
+          <span className="inline-block px-3 py-1 text-sm font-semibold text-emerald-600 bg-emerald-100 rounded-full mb-4">
             Conoce al equipo
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Nuestro <span className="text-purple-600">Equipo</span>
+            Nuestro <span className="text-emerald-600">Equipo</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Los talentosos profesionales detrás de nuestro éxito
@@ -82,23 +82,23 @@ const Team = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   {/* Sombra que sigue el contorno de la foto */}
-                  <div className="absolute inset-0 rounded-full shadow-[0_0_0_0_rgba(124,58,237,0.4)] group-hover:shadow-[0_0_0_8px_rgba(124,58,237,0.2)] transition-all duration-500 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-full shadow-[0_0_0_0_rgba(16,185,129,0.4)] group-hover:shadow-[0_0_0_8px_rgba(16,185,129,0.2)] transition-all duration-500 pointer-events-none"></div>
                 </div>
               </div>
 
               {/* Información del miembro */}
               <h3 className="text-2xl font-bold text-gray-800 mb-1">{member.name}</h3>
-              <p className="text-purple-600 font-medium mb-4">{member.role}</p>
+              <p className="text-emerald-600 font-medium mb-4">{member.role}</p>
 
               {/* Redes sociales */}
               <div className="flex justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors">
+                <a href="#" className="text-gray-500 hover:text-emerald-600 transition-colors">
                   <FiLinkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors">
+                <a href="#" className="text-gray-500 hover:text-emerald-600 transition-colors">
                   <FiTwitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-500 hover:text-purple-600 transition-colors">
+                <a href="#" className="text-gray-500 hover:text-emerald-600 transition-colors">
                   <FiMail className="w-5 h-5" />
                 </a>
               </div>
@@ -108,7 +108,7 @@ const Team = () => {
 
         {/* CTA opcional */}
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-3 rounded-lg font-bold hover:from-purple-700 hover:to-purple-900 transition-all shadow-lg hover:shadow-purple-500/30">
+          <button className="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white px-8 py-3 rounded-lg font-bold hover:from-emerald-700 hover:to-emerald-900 transition-all shadow-lg hover:shadow-emerald-500/30">
             Únete a nuestro equipo
           </button>
         </div>

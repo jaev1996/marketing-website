@@ -20,14 +20,6 @@ const Footer = () => {
         { name: "Testimonios", href: "#testimonials" },
         { name: "Blog", href: "#" }
       ]
-    },
-    {
-      title: "Legal",
-      links: [
-        { name: "Política de Privacidad", href: "#" },
-        { name: "Términos de Servicio", href: "#" },
-        { name: "Aviso Legal", href: "#" }
-      ]
     }
   ];
 
@@ -39,7 +31,7 @@ const Footer = () => {
           {/* Columna logo + descripción */}
           <div>
             <div className="flex items-center mb-4">
-              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600">
+              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-600">
                 AgenciaX
               </h2>
             </div>
@@ -47,7 +39,7 @@ const Footer = () => {
             
             {/* Redes sociales con iconos */}
             <div className="flex space-x-4">
-              {[
+              {[ 
                 { icon: <FiFacebook className="w-5 h-5" />, href: "#" },
                 { icon: <FiInstagram className="w-5 h-5" />, href: "#" },
                 { icon: <FiLinkedin className="w-5 h-5" />, href: "#" },
@@ -57,7 +49,7 @@ const Footer = () => {
                 <a 
                   key={index} 
                   href={social.href} 
-                  className="p-2 bg-gray-800 rounded-full hover:bg-purple-600 hover:text-white transition-colors"
+                  className="p-2 bg-gray-800 rounded-full hover:bg-emerald-600 hover:text-white transition-colors"
                   aria-label={`${social.icon.type.displayName} de AgenciaX`}
                 >
                   {social.icon}
@@ -67,7 +59,7 @@ const Footer = () => {
           </div>
 
           {/* Columnas de enlaces */}
-          {footerLinks.map((column, index) => (
+          {footerLinks.slice(0,2).map((column, index) => (
             <div key={index}>
               <h3 className="text-white font-bold text-lg mb-4">{column.title}</h3>
               <ul className="space-y-3">
@@ -75,9 +67,9 @@ const Footer = () => {
                   <li key={i}>
                     <a 
                       href={link.href} 
-                      className="hover:text-purple-400 transition-colors flex items-start"
+                      className="hover:text-emerald-400 transition-colors flex items-start"
                     >
-                      <span className="w-1 h-1 bg-purple-500 rounded-full mt-2 mr-2"></span>
+                      <span className="w-1 h-1 bg-emerald-500 rounded-full mt-2 mr-2"></span>
                       {link.name}
                     </a>
                   </li>
@@ -86,20 +78,20 @@ const Footer = () => {
             </div>
           ))}
 
-          {/* Columna de contacto */}
+          {/* Columna de contacto (en vez de legal) */}
           <div>
             <h3 className="text-white font-bold text-lg mb-4">Contacto</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <FiMail className="w-5 h-5 text-purple-400 mr-2 mt-0.5" />
+                <FiMail className="w-5 h-5 text-emerald-400 mr-2 mt-0.5" />
                 <span>contacto@agencix.com</span>
               </li>
               <li className="flex items-start">
-                <FiPhone className="w-5 h-5 text-purple-400 mr-2 mt-0.5" />
+                <FiPhone className="w-5 h-5 text-emerald-400 mr-2 mt-0.5" />
                 <span>+58 412 5555555</span>
               </li>
               <li className="flex items-start">
-                <FiMapPin className="w-5 h-5 text-purple-400 mr-2 mt-0.5" />
+                <FiMapPin className="w-5 h-5 text-emerald-400 mr-2 mt-0.5" />
                 <span>Av. Principal, Caracas, Venezuela</span>
               </li>
             </ul>
@@ -112,9 +104,16 @@ const Footer = () => {
             <p className="text-sm mb-4 md:mb-0">
               &copy; {new Date().getFullYear()} AgenciaX. Todos los derechos reservados.
             </p>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="hover:text-purple-400 transition">Política de Cookies</a>
-              <a href="#" className="hover:text-purple-400 transition">Aviso Legal</a>
+            <div className="flex flex-col md:flex-row md:space-x-6 text-sm text-emerald-400 items-center">
+              <div className="flex items-center gap-2">
+                <FiMail className="w-4 h-4" /> contacto@agencix.com
+              </div>
+              <div className="flex items-center gap-2">
+                <FiPhone className="w-4 h-4" /> +58 412 5555555
+              </div>
+              <div className="flex items-center gap-2">
+                <FiMapPin className="w-4 h-4" /> Av. Principal, Caracas
+              </div>
             </div>
           </div>
         </div>
