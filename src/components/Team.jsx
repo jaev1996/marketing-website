@@ -54,11 +54,11 @@ const Team = () => {
       <div className="container mx-auto px-4">
         {/* Encabezado con estilo consistente */}
         <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-semibold text-gray-800 bg-[#cad2bd]/20 rounded-full mb-4">
+          <span className="inline-block px-3 py-1 text-sm font-semibold text-gray-800 bg-secondary rounded-full mb-4">
             Conoce al equipo
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Nuestro <span className="text-[#cad2bd]">Equipo</span>
+            Nuestro <span className="text-secondary">Equipo</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Los talentosos profesionales detrás de nuestro éxito
@@ -89,7 +89,7 @@ const Team = () => {
               <h3 className="text-2xl font-bold text-gray-800 mb-1 font-montserrat">
                 {member.name}
               </h3>
-              <p className="text-[#bac5aa] font-semibold text-lg tracking-wide mb-4 font-montserrat uppercase drop-shadow-[0_1px_4px_#cad2bd55]">
+              <p className="text-secondary font-semibold text-lg tracking-wide mb-4 font-montserrat uppercase drop-shadow-[0_1px_4px_theme('colors.primary'/0.33)]">
                 {member.role}
               </p>
             </div>
@@ -98,7 +98,7 @@ const Team = () => {
 
         {/* CTA opcional */}
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-[#cad2bd] to-[#bac5aa] text-gray-800 px-8 py-3 rounded-lg font-bold hover:from-[#bac5aa] hover:to-[#cad2bd] transition-all shadow-lg hover:shadow-[#bac5aa]/30">
+          <button className="bg-gradient-to-r from-primary to-secondary text-gray-800 px-8 py-3 rounded-lg font-bold hover:from-secondary hover:to-primary transition-all shadow-lg hover:shadow-secondary/30">
             Únete a nuestro equipo
           </button>
         </div>

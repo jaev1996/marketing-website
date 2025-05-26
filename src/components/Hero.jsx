@@ -12,13 +12,13 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 text-center relative z-10">
         {/* Subtítulo con efecto */}
-        <p className="text-[#bac5aa] mb-2 font-mono animate-pulse">
+        <p className="text-secondary mb-2 font-mono animate-pulse">
           Agencia de Marketing Digital
         </p>
 
         {/* Título principal con gradiente y sombra */}
         <h1 className="text-6xl md:text-7xl font-extrabold font-montserrat mb-6">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#cad2bd] drop-shadow-[0_0_10px_rgba(202,210,189,0.2)]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-primary drop-shadow-[0_0_10px_theme('colors.primary'/0.2)]">
             ¡El Futuro de tu Marca,
           </span>
           <br />
@@ -30,19 +30,19 @@ const Hero = () => {
         {/* Descripción con animación sutil */}
         <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 opacity-90 animate-fade-in">
           Soluciones {" "}
-          <span className="font-semibold text-[#cad2bd]">digitales </span>
+          <span className="font-semibold text-primary">digitales </span>
           a medida para impulsar tu Crecimiento.
         </p>
 
         {/* Botón con hover sofisticado */}
-        <button className="bg-[#bac5aa] text-gray-900 px-8 py-4 rounded-xl font-bold hover:bg-[#cad2bd] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#cad2bd]/30">
+        <button className="bg-secondary text-gray-900 px-8 py-4 rounded-xl font-bold hover:bg-primary transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
           Comienza tu proyecto ahora
         </button>
 
         {/* Flecha animada para scroll */}
         <div className="mt-20 animate-bounce">
           <svg
-            className="w-8 h-8 mx-auto text-[#cad2bd]"
+            className="w-8 h-8 mx-auto text-primary"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

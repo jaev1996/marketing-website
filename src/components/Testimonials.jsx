@@ -37,11 +37,11 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         {/* Encabezado */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-[#bac5aa]/10 text-[#bac5aa] rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
             Confían en nosotros
           </span>
           <h2 className="text-4xl md:text-5xl font-bold font-montserrat mb-4">
-            Voces de <span className="text-[#cad2bd]">nuestros clientes</span>
+            Voces de <span className="text-primary">nuestros clientes</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Experiencias reales que demuestran nuestro impacto
@@ -53,7 +53,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group relative bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-[#cad2bd]/30"
+              className="group relative bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-primary/30"
             >
               {/* Testimonio sin video */}
               <div className="p-8 flex flex-col h-full justify-between">
@@ -74,12 +74,12 @@ const Testimonials = () => {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full border-2 border-[#cad2bd] mr-4"
+                    className="w-12 h-12 rounded-full border-2 border-primary mr-4"
                     loading="lazy"
                   />
                   <div>
                     <h4 className="font-bold text-white">{testimonial.name}</h4>
-                    <p className="text-sm text-[#cad2bd]">{testimonial.role}</p>
+                    <p className="text-sm text-primary">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
@@ -94,7 +94,7 @@ const Testimonials = () => {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center bg-gradient-to-r from-[#bac5aa] to-[#cad2bd] text-gray-900 px-8 py-3 rounded-lg font-bold hover:from-[#cad2bd] hover:to-[#bac5aa] transition-all shadow-lg hover:shadow-[#cad2bd]/30"
+            className="inline-flex items-center bg-gradient-to-r from-secondary to-primary text-gray-900 px-8 py-3 rounded-lg font-bold hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30"
           >
             Habla con nuestro equipo
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

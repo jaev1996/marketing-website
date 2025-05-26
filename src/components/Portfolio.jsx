@@ -24,11 +24,11 @@ const Portfolio = () => {
       <div className="container mx-auto px-4">
         {/* Encabezado mejorado */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-[#cad2bd]/40 text-gray-800 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-secondary text-gray-800 rounded-full text-sm font-semibold mb-4">
             Nuestros Clientes
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat">
-            Marcas que <span className="text-[#bac5aa]">Confían</span> en Nosotros
+            Marcas que <span className="text-secondary">Confían</span> en Nosotros
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Empresas líderes que han crecido con nuestras soluciones de marketing
@@ -41,7 +41,7 @@ const Portfolio = () => {
             {duplicatedClients.map((client, index) => (
               <div
                 key={`${client.name}-${index}`}
-                className="group flex w-[180px] shrink-0 items-center justify-center rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-[#cad2bd]/40 hover:border-[#bac5aa] border border-gray-100"
+                className="group flex w-[180px] shrink-0 items-center justify-center rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-primary/40 hover:border-secondary border border-gray-100"
               >
                 <div className="relative flex items-center justify-center h-26 w-full">
                   <img
@@ -49,7 +49,7 @@ const Portfolio = () => {
                     alt={client.name}
                     className="max-h-24 w-auto grayscale-[80%] opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                   />
-                  <div className="absolute inset-0 bg-[#bac5aa]/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-secondary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
             ))}
@@ -58,7 +58,7 @@ const Portfolio = () => {
 
         {/* CTA al final */}
         <div className="text-center mt-16">
-          <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-[#bac5aa] to-[#cad2bd] text-gray-900 font-montserrat rounded-lg hover:from-[#cad2bd] hover:to-[#bac5aa] transition-all shadow-lg hover:shadow-[#cad2bd]/30">
+          <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat rounded-lg hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30">
             Conoce nuestros servicios <FiArrowRight className="ml-2" />
           </button>
         </div>

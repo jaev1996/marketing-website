@@ -32,7 +32,7 @@ const Footer = () => {
           {/* Columna logo + descripción */}
           <div>
             <div className="flex items-center mb-4">
-              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#bac5aa] to-[#cad2bd] font-montserrat">
+              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-secondary to-primary font-montserrat">
                 ELEVA
               </h2>
             </div>
@@ -50,7 +50,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="p-2 bg-[#bac5aa]/10 rounded-full hover:bg-[#cad2bd] hover:text-gray-900 transition-colors"
+                  className="p-2 bg-secondary/10 rounded-full hover:bg-secondary hover:text-gray-900 transition-colors"
                   aria-label={`${social.icon.type.displayName} de ELEVA`}
                 >
                   {social.icon}
@@ -62,13 +62,13 @@ const Footer = () => {
           {/* Columnas de enlaces */}
           {footerLinks.slice(0, 2).map((column, index) => (
             <div key={index}>
-              <h3 className="text-[#bac5aa] font-bold text-lg mb-4 font-montserrat">{column.title}</h3>
+              <h3 className="text-secondary font-bold text-lg mb-4 font-montserrat">{column.title}</h3>
               <ul className="space-y-3">
                 {column.links.map((link, i) => (
                   <li key={i}>
                     <a
                       href={link.href}
-                      className="text-white hover:text-[#bac5aa] transition-colors flex items-start"
+                      className="text-white hover:text-secondary transition-colors flex items-start"
                     >
                       <span className="w-1 h-1 bg-white rounded-full mt-2 mr-2"></span>
                       {link.name}
@@ -81,7 +81,7 @@ const Footer = () => {
 
           {/* Columna de contacto (en vez de legal) */}
           <div>
-            <h3 className="text-[#bac5aa] font-bold text-lg mb-4 font-montserrat">Contacto</h3>
+            <h3 className="text-secondary font-bold text-lg mb-4 font-montserrat">Contacto</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <FiMail className="w-5 h-5 text-white mr-2 mt-0.5" />
@@ -100,12 +100,12 @@ const Footer = () => {
         </div>
 
         {/* División y copyright */}
-        <div className="border-t border-[#bac5aa]/20 pt-8">
+        <div className="border-t border-secondary/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm mb-4 md:mb-0 text-[#bac5aa]">
+            <p className="text-sm mb-4 md:mb-0 text-secondary">
               &copy; {new Date().getFullYear()} ELEVA. Todos los derechos reservados.
             </p>
-            <div className="flex flex-col md:flex-row md:space-x-6 text-sm text-[#cad2bd] items-center">
+            <div className="flex flex-col md:flex-row md:space-x-6 text-sm text-primary items-center">
               <div className="flex items-center gap-2">
                 <FiMail className="w-4 h-4" /> contacto@agencix.com
               </div>

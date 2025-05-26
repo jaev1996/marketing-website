@@ -80,11 +80,11 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         {/* Encabezado */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-[#cad2bd]/40 text-gray-800 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-secondary text-gray-800 rounded-full text-sm font-semibold mb-4">
             Contacto Directo
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat">
-            Hablemos de tu <span className="text-[#bac5aa]">proyecto</span>
+            Hablemos de tu <span className="text-secondary">proyecto</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Elige tu método preferido o envíanos un mensaje directo
@@ -94,9 +94,9 @@ const Contact = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Columna de métodos de contacto (mismo ancho que el formulario) */}
           <div className="lg:w-1/2">
-            <div className="bg-[#bac5aa]/10 rounded-xl p-8 shadow-sm border border-[#cad2bd]/30 h-full">
+            <div className="bg-secondary/10 rounded-xl p-8 shadow-sm border border-secondary/50 h-full">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 font-montserrat text-gray-800">
-                <FiCheckCircle className="text-[#cad2bd]" />
+                <FiCheckCircle className="text-primary" />
                 <span>Contacto Rápido</span>
               </h3>
 
@@ -104,7 +104,7 @@ const Contact = () => {
                 {contactMethods.map((method, index) => (
                   <div
                     key={index}
-                    className={`p-4 rounded-lg transition-all cursor-pointer bg-[#cad2bd]/10 text-[#bac5aa] ${method.action ? 'hover:shadow-md' : ''} ${activeMethod === index ? 'ring-2 ring-[#bac5aa]' : ''}`}
+                    className={`p-4 rounded-lg transition-all cursor-pointer bg-primary/10 text-secondary ${method.action ? 'hover:shadow-md' : ''} ${activeMethod === index ? 'ring-2 ring-secondary' : ''}`}
                     onClick={() => {
                       if (method.action) method.action();
                       setActiveMethod(index);
@@ -113,7 +113,7 @@ const Contact = () => {
                     onMouseLeave={() => setActiveMethod(null)}
                   >
                     <div className="flex items-center gap-4">
-                      <div className="p-3 rounded-full bg-[#bac5aa]/20">
+                      <div className="p-3 rounded-full bg-secondary/20">
                         {method.icon}
                       </div>
                       <div>
@@ -131,19 +131,19 @@ const Contact = () => {
               </div>
 
               {/* Información adicional */}
-              <div className="mt-8 pt-6 border-t border-[#cad2bd]/30">
+              <div className="mt-8 pt-6 border-t border-primary/30">
                 <h4 className="font-bold mb-3 font-montserrat text-gray-800">¿Por qué elegirnos?</h4>
                 <ul className="space-y-2 text-sm text-gray-900">
                   <li className="flex items-start gap-2">
-                    <span className="text-[#cad2bd]">✓</span>
+                    <span className="text-primary">✓</span>
                     <span>Respuesta en menos de 24 horas</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#cad2bd]">✓</span>
+                    <span className="text-primary">✓</span>
                     <span>Consultoría inicial sin costo</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#cad2bd]">✓</span>
+                    <span className="text-primary">✓</span>
                     <span>Soporte técnico permanente</span>
                   </li>
                 </ul>
@@ -153,15 +153,15 @@ const Contact = () => {
 
           {/* Formulario */}
           <div className="lg:w-1/2">
-            <div className="bg-white rounded-xl shadow-sm border border-[#cad2bd]/30 p-8 h-full">
+            <div className="bg-white rounded-xl shadow-sm border border-primary/30 p-8 h-full">
               {isSubmitted ? (
                 <div className="text-center py-8 h-full flex flex-col justify-center">
-                  <FiCheckCircle className="w-16 h-16 text-[#bac5aa] mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold mb-2 font-montserrat text-[#bac5aa]">¡Mensaje enviado!</h3>
+                  <FiCheckCircle className="w-16 h-16 text-secondary mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold mb-2 font-montserrat text-secondary">¡Mensaje enviado!</h3>
                   <p className="text-gray-700 mb-6">Te contactaremos en menos de 24 horas.</p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="bg-[#bac5aa] text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-[#cad2bd] transition mx-auto"
+                    className="bg-secondary text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-primary transition mx-auto"
                   >
                     Nuevo mensaje
                   </button>
@@ -177,7 +177,7 @@ const Contact = () => {
                         id="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 border border-[#cad2bd]/30 rounded-lg focus:ring-2 focus:ring-[#bac5aa] focus:border-transparent transition text-gray-900 bg-white"
+                        className="w-full px-4 py-3 border border-primary/30 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition text-gray-900 bg-white"
                         placeholder="Ej: María González"
                         required
                       />
@@ -190,7 +190,7 @@ const Contact = () => {
                         id="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 border border-[#cad2bd]/30 rounded-lg focus:ring-2 focus:ring-[#bac5aa] focus:border-transparent transition text-gray-900 bg-white"
+                        className="w-full px-4 py-3 border border-primary/30 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition text-gray-900 bg-white"
                         placeholder="Ej: contacto@tudominio.com"
                         required
                       />
@@ -203,7 +203,7 @@ const Contact = () => {
                         rows="4"
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 border border-[#cad2bd]/30 rounded-lg focus:ring-2 focus:ring-[#bac5aa] focus:border-transparent transition text-gray-900 bg-white"
+                        className="w-full px-4 py-3 border border-primary/30 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition text-gray-900 bg-white"
                         placeholder="Describe tu proyecto, necesidades y objetivos..."
                         required
                       ></textarea>
@@ -213,7 +213,7 @@ const Contact = () => {
                       <input
                         type="checkbox"
                         id="privacy"
-                        className="mt-1 w-4 h-4 text-[#bac5aa] rounded focus:ring-[#cad2bd]"
+                        className="mt-1 w-4 h-4 text-secondary rounded focus:ring-primary"
                         required
                       />
                       <label htmlFor="privacy" className="ml-2 text-sm text-gray-900">
@@ -223,7 +223,7 @@ const Contact = () => {
 
                     <button
                       type="submit"
-                      className="w-full bg-[#bac5aa] text-gray-900 py-3 px-6 rounded-lg font-bold hover:bg-[#cad2bd] transition-all shadow hover:shadow-md flex items-center justify-center gap-2 font-montserrat"
+                      className="w-full bg-secondary text-gray-900 py-3 px-6 rounded-lg font-bold hover:bg-primary transition-all shadow hover:shadow-md flex items-center justify-center gap-2 font-montserrat"
                     >
                       <FiSend /> Enviar mensaje
                     </button>

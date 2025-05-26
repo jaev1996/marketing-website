@@ -20,7 +20,7 @@ const Navbar = () => {
           {/* Logo con efecto hover */}
           <a
             href="#"
-            className="text-2xl font-bold font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-[#bac5aa] to-[#cad2bd] hover:from-[#cad2bd] hover:to-[#bac5aa] transition-all"
+            className="text-2xl font-bold font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary transition-all"
           >
             ELEVA
           </a>
@@ -31,17 +31,17 @@ const Navbar = () => {
               <li key={index}>
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className="relative group text-white font-montserrat hover:text-[#bac5aa] transition-colors duration-200"
+                  className="relative group text-white font-montserrat hover:text-secondary transition-colors duration-200"
                 >
                   {item}
-                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#cad2bd] transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </li>
             ))}
           </ul>
 
           {/* Botón de contacto (solo desktop) */}
-          <button className="hidden md:block bg-gradient-to-r from-[#bac5aa] to-[#cad2bd] text-gray-900 font-montserrat px-6 py-2 rounded-lg font-medium hover:from-[#cad2bd] hover:to-[#bac5aa] transition-all shadow-lg hover:shadow-[#cad2bd]/30">
+          <button className="hidden md:block bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat px-6 py-2 rounded-lg font-medium hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30">
             ¡Hablemos!
           </button>
 
@@ -67,7 +67,7 @@ const Navbar = () => {
               <li key={index}>
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className="block py-2 text-white font-montserrat hover:text-[#bac5aa] transition-colors"
+                  className="block py-2 text-white font-montserrat hover:text-secondary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item}
@@ -75,7 +75,7 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <button className="w-full bg-gradient-to-r from-[#bac5aa] to-[#cad2bd] text-gray-900 font-montserrat px-4 py-2 rounded-lg font-medium mt-2 hover:from-[#cad2bd] hover:to-[#bac5aa]">
+              <button className="w-full bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat px-4 py-2 rounded-lg font-medium mt-2 hover:from-primary hover:to-secondary">
                 Contactar
               </button>
             </li>
