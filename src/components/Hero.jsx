@@ -19,24 +19,23 @@ const Hero = () => {
         {/* Título principal con gradiente y sombra */}
         <h1 className="text-6xl md:text-7xl font-extrabold font-montserrat mb-6">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-primary drop-shadow-[0_0_10px_theme('colors.primary'/0.2)]">
-            ¡El Futuro de tu Marca,
+            ELEVA Y DIGITALIZA
           </span>
           <br />
           <span className="text-white drop-shadow-[0_0_15px_rgba(186,197,170,0.3)]">
-            Comienza Aquí!
+            TU NEGOCIO.
           </span>
         </h1>
 
         {/* Descripción con animación sutil */}
         <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 opacity-90 animate-fade-in">
-          Soluciones {" "}
-          <span className="font-semibold text-primary">digitales </span>
-          a medida para impulsar tu Crecimiento.
+          Hoy en día hay más personas en internet, que en la calle {" "}
+          <span className="font-semibold text-primary">¿Cómo es que tu negocio no está? </span>
         </p>
 
         {/* Botón con hover sofisticado */}
         <button className="bg-secondary text-gray-900 px-8 py-4 rounded-xl font-bold hover:bg-primary transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
-          Comienza tu proyecto ahora
+          COMIENZA AHORA
         </button>
 
         {/* Flecha animada para scroll */}

@@ -55,7 +55,7 @@ const Services = () => {
                   {/* Botón para móviles */}
                   <button
                     onClick={() => toggleCardFlip(index)}
-                    className="sm:hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-gray-900 px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-white transition-colors"
+                    className="sm:hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/70 text-gray-900 px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-white transition-colors"
                   >
                     Ver detalles
                   </button>
@@ -88,7 +88,7 @@ const Services = () => {
                     {/* Botón para volver en móviles */}
                     <button
                       onClick={() => toggleCardFlip(index)}
-                      className="sm:hidden mt-4 bg-white text-secondary px-4 py-2 rounded-lg text-sm font-bold shadow-md hover:bg-gray-100 transition-colors"
+                      className="sm:hidden mt-4 bg-white/70 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold shadow-md hover:bg-gray-100 transition-colors"
                     >
                       Volver
                     </button>

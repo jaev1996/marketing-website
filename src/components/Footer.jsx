@@ -1,4 +1,4 @@
-import { FiFacebook, FiInstagram, FiLinkedin, FiMapPin, FiYoutube, FiMail, FiPhone } from "react-icons/fi";
+import { FiFacebook, FiInstagram, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import './montserrat.css';
 
@@ -9,8 +9,7 @@ const Footer = () => {
       links: [
         { name: "SEO y Posicionamiento", href: "#services" },
         { name: "Publicidad Digital", href: "#services" },
-        { name: "Redes Sociales", href: "#services" },
-        { name: "Desarrollo Web", href: "#services" }
+        { name: "Redes Sociales", href: "#services" }
       ]
     },
     {
@@ -18,8 +17,7 @@ const Footer = () => {
       links: [
         { name: "Sobre Nosotros", href: "#about" },
         { name: "Portafolio", href: "#portfolio" },
-        { name: "Testimonios", href: "#testimonials" },
-        { name: "Blog", href: "#" }
+        { name: "Testimonios", href: "#testimonials" }
       ]
     }
   ];
@@ -40,31 +38,37 @@ const Footer = () => {
 
             {/* Redes sociales con iconos */}
             <div className="flex space-x-4">
-              {[
-                { icon: <FiFacebook className="w-5 h-5" />, href: "#" },
-                { icon: <FiInstagram className="w-5 h-5" />, href: "#" },
-                { icon: <FiLinkedin className="w-5 h-5" />, href: "#" },
-                { icon: <FaXTwitter className="w-5 h-5" />, href: "#" },
-                { icon: <FiYoutube className="w-5 h-5" />, href: "#" }
+              { [
+                { icon: <FiInstagram className="w-5 h-5" />, href: "https://instagram.com/eleva_digital", label: "Instagram de ELEVA" },
+                { icon: <FiFacebook className="w-5 h-5" />, href: "https://facebook.com/elevadigital", label: "Facebook de ELEVA" },
+                { icon: <FaXTwitter className="w-5 h-5" />, href: "https://tiktok.com/@eleva_digital", label: "TikTok de ELEVA" }
               ].map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   className="p-2 bg-secondary/10 rounded-full hover:bg-secondary hover:text-gray-900 transition-colors"
-                  aria-label={`${social.icon.type.displayName} de ELEVA`}
+                  aria-label={social.label}
+                  target="_blank" rel="noopener noreferrer"
                 >
                   {social.icon}
                 </a>
-              ))}
+              )) }
             </div>
           </div>
 
           {/* Columnas de enlaces */}
-          {footerLinks.slice(0, 2).map((column, index) => (
+          { footerLinks.slice(0, 2).map((column, index) => (
             <div key={index}>
               <h3 className="text-secondary font-bold text-lg mb-4 font-montserrat">{column.title}</h3>
               <ul className="space-y-3">
-                {column.links.map((link, i) => (
+                { column.links.filter(link =>
+                  (column.title === "Servicios" && [
+                    "SEO y Posicionamiento",
+                    "Publicidad Digital",
+                    "Redes Sociales"
+                  ].includes(link.name)) ||
+                  (column.title === "Empresa" && link.name !== "Blog")
+                ).map((link, i) => (
                   <li key={i}>
                     <a
                       href={link.href}
@@ -74,10 +78,10 @@ const Footer = () => {
                       {link.name}
                     </a>
                   </li>
-                ))}
+                )) }
               </ul>
             </div>
-          ))}
+          )) }
 
           {/* Columna de contacto (en vez de legal) */}
           <div>
@@ -89,11 +93,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <FiPhone className="w-5 h-5 text-white mr-2 mt-0.5" />
-                <span className="text-white">+58 412 5555555</span>
-              </li>
-              <li className="flex items-start">
-                <FiMapPin className="w-5 h-5 text-white mr-2 mt-0.5" />
-                <span className="text-white">Av. Principal, Caracas, Venezuela</span>
+                <span className="text-white">+58 424 2368587</span>
               </li>
             </ul>
           </div>
@@ -110,10 +110,7 @@ const Footer = () => {
                 <FiMail className="w-4 h-4" /> contacto@agencix.com
               </div>
               <div className="flex items-center gap-2">
-                <FiPhone className="w-4 h-4" /> +58 412 5555555
-              </div>
-              <div className="flex items-center gap-2">
-                <FiMapPin className="w-4 h-4" /> Av. Principal, Caracas
+                <FiPhone className="w-4 h-4" /> +58 424 2368587
               </div>
             </div>
           </div>

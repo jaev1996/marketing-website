@@ -61,7 +61,7 @@ const Team = () => {
             Nuestro <span className="text-secondary">Equipo</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Los talentosos profesionales detrás de nuestro éxito
+            Mentes que convierten ideas en resultados
           </p>
         </div>
 

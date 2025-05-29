@@ -72,13 +72,9 @@ export const services = [
     ]
   },
   {
-    title: "Promotoras",
-    shortDescription: "Conexión personalizada con tu público para generar confianza.",
-    features: [
-      "Interacción directa",
-      "Transmisión de mensaje",
-      "Experiencia cercana"
-    ]
+    title: "Vendedoras",
+    shortDescription: "Contamos con un equipo de vendedoras capacitadas, listas para impulsar tus productos o servicios. Ellas se encargan de atender consultas y cerrar ventas para tu negocio, trabajando a comisión. Solo ganan si tú ganas.",
+    features: []
   },
   {
     title: "Email Marketing",

@@ -55,23 +55,16 @@ const Contact = () => {
     {
       icon: <FiPhone className="w-5 h-5" />,
       title: "WhatsApp",
-      details: "+58 412 5555555",
-      action: () => window.open("https://wa.me/584125555555", "_blank"),
+      details: "+58 424 2368587",
+      action: () => window.open("https://wa.me/584242368587", "_blank"),
       color: "bg-green-100 text-green-800"
     },
     {
       icon: <FiClock className="w-5 h-5" />,
       title: "Horario de Atención",
-      details: "Lun-Vie: 9:00 AM - 5:00 PM\nSáb: 9:00 AM - 12:00 PM",
+      details: "Lun-Sáb: 8:00 AM - 6:00 PM",
       action: null,
       color: "bg-blue-100 text-blue-800"
-    },
-    {
-      icon: <FiMapPin className="w-5 h-5" />,
-      title: "Ubicación",
-      details: "Av. Principal, Torre Empresarial, Piso 10, Caracas",
-      action: null,
-      color: "bg-gray-100 text-gray-800"
     }
   ];
 
@@ -128,25 +121,6 @@ const Contact = () => {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* Información adicional */}
-              <div className="mt-8 pt-6 border-t border-primary/30">
-                <h4 className="font-bold mb-3 font-montserrat text-gray-800">¿Por qué elegirnos?</h4>
-                <ul className="space-y-2 text-sm text-gray-900">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span>
-                    <span>Respuesta en menos de 24 horas</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span>
-                    <span>Consultoría inicial sin costo</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span>
-                    <span>Soporte técnico permanente</span>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>

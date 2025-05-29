@@ -44,7 +44,7 @@ const Testimonials = () => {
             Voces de <span className="text-primary">nuestros clientes</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Experiencias reales que demuestran nuestro impacto
+            Experiencias reales que reflejan nuestro compromiso
           </p>
         </div>
 

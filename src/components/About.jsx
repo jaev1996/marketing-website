@@ -28,8 +28,9 @@ const About = () => {
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   "Transparencia en resultados",
-                  "Equipo certificado",
-                  "Soporte y Atencion en Instantes"
+                  "Equipo calificado",
+                  "Respuestas inmediata",
+                  "Atención constante"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
                     <svg className="w-5 h-5 text-primary mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

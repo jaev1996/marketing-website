@@ -2,18 +2,19 @@ import { FiArrowRight } from "react-icons/fi";
 import './montserrat.css';
 
 const Portfolio = () => {
-  // Logos de clientes genéricos (marcas reconocidas)
+  // Logos de clientes reales (archivos locales en public/marcas)
   const clients = [
-    { name: "Nike", logo: "https://cdn.worldvectorlogo.com/logos/nike-8.svg" },
-    { name: "Adidas", logo: "https://cdn.worldvectorlogo.com/logos/adidas-8.svg" },
-    { name: "Apple", logo: "https://cdn.worldvectorlogo.com/logos/apple-11.svg" },
-    { name: "Samsung", logo: "https://cdn.worldvectorlogo.com/logos/samsung-8.svg" },
-    { name: "Coca Cola", logo: "https://cdn.worldvectorlogo.com/logos/cocacola.svg" },
-    { name: "Amazon", logo: "https://cdn.worldvectorlogo.com/logos/amazon-dark.svg" },
-    { name: "Microsoft", logo: "https://cdn.worldvectorlogo.com/logos/microsoft-6.svg" },
-    { name: "Spotify", logo: "https://cdn.worldvectorlogo.com/logos/spotify-logo.svg" },
-    { name: "Netflix", logo: "https://cdn.worldvectorlogo.com/logos/netflix-3.svg" },
-    { name: "Airbnb", logo: "https://cdn.worldvectorlogo.com/logos/airbnb-1.svg" },
+    { name: "Almendrina", logo: "/marcas/almendrina-8.png" },
+    { name: "Arisa", logo: "/marcas/arisa-8.png" },
+    { name: "Bellisima", logo: "/marcas/bellisima-8.png" },
+    { name: "Brasero", logo: "/marcas/brasero-8.png" },
+    { name: "Constripro", logo: "/marcas/constripro-8.png" },
+    { name: "Dibar", logo: "/marcas/dibar-8.png" },
+    { name: "Green City", logo: "/marcas/green city-8.png" },
+    { name: "Mapa", logo: "/marcas/mapa-8.png" },
+    { name: "O11ce", logo: "/marcas/o11ce-8.png" },
+    { name: "Once", logo: "/marcas/once-8.png" },
+    { name: "Polemico", logo: "/marcas/polemico-8.png" },
   ];
 
   // Duplicamos los logos para crear el efecto de carrusel infinito
@@ -30,9 +31,6 @@ const Portfolio = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat">
             Marcas que <span className="text-secondary">Confían</span> en Nosotros
           </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Empresas líderes que han crecido con nuestras soluciones de marketing
-          </p>
         </div>
 
         {/* Carrusel de logos mejorado */}
@@ -43,11 +41,12 @@ const Portfolio = () => {
                 key={`${client.name}-${index}`}
                 className="group flex w-[180px] shrink-0 items-center justify-center rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-primary/40 hover:border-secondary border border-gray-100"
               >
-                <div className="relative flex items-center justify-center h-26 w-full">
+                <div className="relative flex items-center justify-center h-26 w-full bg-gray-950 rounded-lg">
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-24 w-auto grayscale-[80%] opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                    className="max-h-24 w-auto grayscale-0 opacity-100 transition-all duration-300"
+                    style={{ objectFit: 'contain', width: '100%' }}
                   />
                   <div className="absolute inset-0 bg-secondary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
