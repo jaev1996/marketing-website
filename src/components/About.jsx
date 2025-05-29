@@ -2,7 +2,7 @@ import './montserrat.css';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-950 text-white">
+    <section id="about" className="py-20 bg-black text-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Columna de texto con jerarquía mejorada */}

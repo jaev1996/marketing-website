@@ -24,7 +24,7 @@ const Services = () => {
             Nuestros <span className="text-secondary">Servicios</span>
           </h2>
           <p className="text-xl text-gray-800 max-w-2xl mx-auto">
-            Soluciones digitales que impulsan tu negocio
+            Soluciones digitales que elevan tu negocio
           </p>
         </div>
 
@@ -33,17 +33,24 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group h-72 [perspective:1000px] transition-all duration-500 hover:scale-[1.02]"
+              className="group h-82 [perspective:1000px] transition-all duration-500 hover:scale-[1.02] overflow-visible"
+              style={{ WebkitPerspective: '1000px', perspective: '1000px' }}
             >
-              <div className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flippedCards[index] ? '[transform:rotateY(180deg)]' : 'group-hover:[transform:rotateY(180deg)]'} shadow-xl rounded-xl`}>
+              <div
+                className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flippedCards[index] ? '[transform:rotateY(180deg)]' : 'group-hover:[transform:rotateY(180deg)]'} shadow-xl rounded-xl`}
+                style={{ WebkitTransformStyle: 'preserve-3d', transformStyle: 'preserve-3d' }}
+              >
                 {/* Frente de la tarjeta - Versión mejorada */}
-                <div className="absolute inset-0 bg-secondary rounded-xl p-6 flex flex-col items-center justify-center [backface-visibility:hidden] border-2 border-primary/30 overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-secondary rounded-xl p-6 flex flex-col items-center justify-center [backface-visibility:hidden] border-2 border-primary/30 overflow-hidden"
+                  style={{ WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
+                >
                   {/* Efecto de fondo sutil */}
                   <div className="absolute -right-10 -top-10 w-32 h-32 bg-primary opacity-10 rounded-full blur-xl"></div>
 
                   {/* Contenedor del título con efecto */}
                   <div className="relative z-10 text-center p-4">
-                    <div className="mb-3 mx-auto w-16 h-1 bg-gradient-to-r from-primary to-white rounded-full"></div>
+                    <div className="mb-3 mx-auto w-26 h-1 bg-gradient-to-r from-white/70 to-white/30 rounded-full"></div>
                     <h3 className="text-3xl font-bold text-gray-900 uppercase font-montserrat">
                       {service.title}
                     </h3>
@@ -57,12 +64,15 @@ const Services = () => {
                     onClick={() => toggleCardFlip(index)}
                     className="sm:hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/70 text-gray-900 px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-white transition-colors"
                   >
-                    Ver detalles
+                    Ver mas
                   </button>
                 </div>
 
                 {/* Parte trasera de la tarjeta - Versión mejorada */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-xl p-6 flex flex-col items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)] text-gray-900 overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-xl p-6 flex flex-col items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)] text-gray-900 overflow-hidden"
+                  style={{ WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
+                >
                   {/* Patrón de fondo sutil */}
                   <div className="absolute inset-0 opacity-10 [background-image:linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
@@ -107,10 +117,10 @@ const Services = () => {
         {/* CTA (se mantiene igual) */}
         <div className="mt-16 text-center">
           <p className="text-lg text-gray-800 mb-6">
-            ¿Necesitas una solución personalizada?
+            ¿Te interesa contratar algun servicio?
           </p>
           <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat rounded-lg hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30">
-            Contáctanos ahora
+            DETALLES DE LOS SERVICIOS
           </button>
         </div>
       </div>

@@ -23,7 +23,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-950 text-[#cad2bd] pt-16 pb-8">
+    <footer className="bg-black text-[#cad2bd] pt-16 pb-8">
       <div className="container mx-auto px-4">
         {/* Contenido principal */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
@@ -38,7 +38,7 @@ const Footer = () => {
 
             {/* Redes sociales con iconos */}
             <div className="flex space-x-4">
-              { [
+              {[
                 { icon: <FiInstagram className="w-5 h-5" />, href: "https://instagram.com/eleva_digital", label: "Instagram de ELEVA" },
                 { icon: <FiFacebook className="w-5 h-5" />, href: "https://facebook.com/elevadigital", label: "Facebook de ELEVA" },
                 { icon: <FaXTwitter className="w-5 h-5" />, href: "https://tiktok.com/@eleva_digital", label: "TikTok de ELEVA" }
@@ -52,16 +52,16 @@ const Footer = () => {
                 >
                   {social.icon}
                 </a>
-              )) }
+              ))}
             </div>
           </div>
 
           {/* Columnas de enlaces */}
-          { footerLinks.slice(0, 2).map((column, index) => (
+          {footerLinks.slice(0, 2).map((column, index) => (
             <div key={index}>
               <h3 className="text-secondary font-bold text-lg mb-4 font-montserrat">{column.title}</h3>
               <ul className="space-y-3">
-                { column.links.filter(link =>
+                {column.links.filter(link =>
                   (column.title === "Servicios" && [
                     "SEO y Posicionamiento",
                     "Publicidad Digital",
@@ -78,10 +78,10 @@ const Footer = () => {
                       {link.name}
                     </a>
                   </li>
-                )) }
+                ))}
               </ul>
             </div>
-          )) }
+          ))}
 
           {/* Columna de contacto (en vez de legal) */}
           <div>

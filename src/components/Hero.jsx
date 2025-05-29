@@ -3,7 +3,7 @@ const Hero = () => {
   return (
     <section className="relative bg-gradient-to-br from-gray-950 to-gray-900 text-white min-h-screen flex items-center overflow-hidden">
       {/* Efecto de fondo degradado */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-900 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 z-0"></div>
 
       {/* Partículas animadas (opcional, requiere librería como tsparticles) */}
       <div className="absolute inset-0 z-1 opacity-20">
@@ -18,11 +18,11 @@ const Hero = () => {
 
         {/* Título principal con gradiente y sombra */}
         <h1 className="text-6xl md:text-7xl font-extrabold font-montserrat mb-6">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-primary drop-shadow-[0_0_10px_theme('colors.primary'/0.2)]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-secondary drop-shadow-[0_0_10px_theme('colors.primary'/0.2)]">
             ELEVA Y DIGITALIZA
           </span>
           <br />
-          <span className="text-white drop-shadow-[0_0_15px_rgba(186,197,170,0.3)]">
+          <span className="text-white drop-shadow-[0_0_15px_rgba(181,220,202,0.3)]">
             TU NEGOCIO.
           </span>
         </h1>
@@ -30,11 +30,11 @@ const Hero = () => {
         {/* Descripción con animación sutil */}
         <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 opacity-90 animate-fade-in">
           Hoy en día hay más personas en internet, que en la calle {" "}
-          <span className="font-semibold text-primary">¿Cómo es que tu negocio no está? </span>
+          <span className="font-semibold text-secondary">¿Cómo es que tu negocio no está? </span>
         </p>
 
         {/* Botón con hover sofisticado */}
-        <button className="bg-secondary text-gray-900 px-8 py-4 rounded-xl font-bold hover:bg-primary transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
+        <button className="bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat px-6 py-4 rounded-lg font-medium hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30">
           COMIENZA AHORA
         </button>
 

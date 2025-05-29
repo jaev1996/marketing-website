@@ -58,7 +58,7 @@ const Portfolio = () => {
         {/* CTA al final */}
         <div className="text-center mt-16">
           <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat rounded-lg hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30">
-            Conoce nuestros servicios <FiArrowRight className="ml-2" />
+            CONOCE NUESTROS SERVICIOS <FiArrowRight className="ml-2" />
           </button>
         </div>
       </div>
