@@ -28,22 +28,47 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Grid de servicios mejorado */}
+        {/* Grid de servicios optimizado para Safari */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group h-82 [perspective:1000px] transition-all duration-500 hover:scale-[1.02] overflow-visible"
-              style={{ WebkitPerspective: '1000px', perspective: '1000px' }}
+              className="group h-82 transition-all duration-500 hover:scale-[1.02] overflow-visible"
+              style={{
+                perspective: '1000px',
+                WebkitPerspective: '1000px'
+              }}
             >
               <div
-                className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flippedCards[index] ? '[transform:rotateY(180deg)]' : 'group-hover:[transform:rotateY(180deg)]'} shadow-xl rounded-xl`}
-                style={{ WebkitTransformStyle: 'preserve-3d', transformStyle: 'preserve-3d' }}
+                className="relative h-full w-full transition-transform duration-700 shadow-xl rounded-xl"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  WebkitTransformStyle: 'preserve-3d',
+                  transform: flippedCards[index] ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                  WebkitTransform: flippedCards[index] ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                  transition: 'transform 0.7s',
+                  WebkitTransition: '-webkit-transform 0.7s'
+                }}
+                onMouseEnter={() => {
+                  if (window.innerWidth >= 640) { // Solo en desktop
+                    setFlippedCards(prev => ({ ...prev, [index]: true }));
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (window.innerWidth >= 640) { // Solo en desktop
+                    setFlippedCards(prev => ({ ...prev, [index]: false }));
+                  }
+                }}
               >
                 {/* Frente de la tarjeta - Versión mejorada */}
                 <div
-                  className="absolute inset-0 bg-secondary rounded-xl p-6 flex flex-col items-center justify-center [backface-visibility:hidden] border-2 border-primary/30 overflow-hidden"
-                  style={{ WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
+                  className="absolute inset-0 bg-secondary rounded-xl p-6 flex flex-col items-center justify-center border-2 border-primary/30 overflow-hidden"
+                  style={{
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden',
+                    transform: 'rotateY(0deg)',
+                    WebkitTransform: 'rotateY(0deg)'
+                  }}
                 >
                   {/* Efecto de fondo sutil */}
                   <div className="absolute -right-10 -top-10 w-32 h-32 bg-primary opacity-10 rounded-full blur-xl"></div>
@@ -70,11 +95,19 @@ const Services = () => {
 
                 {/* Parte trasera de la tarjeta - Versión mejorada */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-xl p-6 flex flex-col items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)] text-gray-900 overflow-hidden"
-                  style={{ WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
+                  className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-xl p-6 flex flex-col items-center justify-center text-gray-900 overflow-hidden"
+                  style={{
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden',
+                    transform: 'rotateY(180deg)',
+                    WebkitTransform: 'rotateY(180deg)'
+                  }}
                 >
                   {/* Patrón de fondo sutil */}
-                  <div className="absolute inset-0 opacity-10 [background-image:linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+                  <div className="absolute inset-0 opacity-10" style={{
+                    backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)',
+                    backgroundSize: '20px 20px'
+                  }}></div>
 
                   <div className="relative z-10 text-center">
                     <p className="text-sm font-semibold mb-4 px-2 py-1 bg-white/70 text-gray-900 rounded-full inline-block uppercase tracking-wide shadow-sm font-montserrat">

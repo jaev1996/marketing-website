@@ -29,7 +29,7 @@ const About = () => {
                 {[
                   "Transparencia en resultados",
                   "Equipo calificado",
-                  "Respuestas inmediata",
+                  "Respuesta inmediata",
                   "Atención constante"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">

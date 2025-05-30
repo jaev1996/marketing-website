@@ -1,13 +1,28 @@
 import './montserrat.css';
+
 const Hero = () => {
   return (
     <section className="relative bg-gradient-to-br from-gray-950 to-gray-900 text-white min-h-screen flex items-center overflow-hidden">
-      {/* Efecto de fondo degradado */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 z-0"></div>
+      {/* Imagen de fondo con overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80"
+          alt="Marketing Digital Background"
+          className="w-full h-full object-cover opacity-70"
+        />
+        {/* Overlay oscuro para mantener legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/85 to-gray-950/90"></div>
+      </div>
 
-      {/* Partículas animadas (opcional, requiere librería como tsparticles) */}
-      <div className="absolute inset-0 z-1 opacity-20">
-        {/* Aquí iría un componente de partículas */}
+      {/* Efecto de fondo degradado adicional */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-gray-900/40 z-1"></div>
+
+      {/* Partículas animadas flotantes */}
+      <div className="absolute inset-0 z-2 opacity-10">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-secondary rounded-full animate-ping"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-primary rounded-full animate-pulse delay-300"></div>
+        <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-secondary rounded-full animate-ping delay-500"></div>
       </div>
 
       <div className="container mx-auto px-4 text-center relative z-10">
@@ -23,7 +38,7 @@ const Hero = () => {
           </span>
           <br />
           <span className="text-white drop-shadow-[0_0_15px_rgba(181,220,202,0.3)]">
-            TU NEGOCIO.
+            TU NEGOCIO
           </span>
         </h1>
 
@@ -34,7 +49,7 @@ const Hero = () => {
         </p>
 
         {/* Botón con hover sofisticado */}
-        <button className="bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat px-6 py-4 rounded-lg font-medium hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30">
+        <button className="bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat px-6 py-4 rounded-lg font-medium hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30 transform hover:scale-105">
           COMIENZA AHORA
         </button>
 
@@ -55,6 +70,9 @@ const Hero = () => {
           </svg>
         </div>
       </div>
+
+      {/* Elementos decorativos adicionales */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-900 to-transparent z-5"></div>
     </section>
   );
 };
