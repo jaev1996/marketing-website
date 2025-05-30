@@ -89,13 +89,13 @@ const Services = () => {
                     onClick={() => toggleCardFlip(index)}
                     className="sm:hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/70 text-gray-900 px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-white transition-colors"
                   >
-                    Ver mas
+                    Ver más
                   </button>
                 </div>
 
-                {/* Parte trasera de la tarjeta - Versión mejorada */}
+                {/* Parte trasera de la tarjeta - MEJORADA */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-xl p-6 flex flex-col items-center justify-center text-gray-900 overflow-hidden"
+                  className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-xl p-6 flex flex-col justify-center text-gray-900 overflow-hidden border-2 border-primary/20"
                   style={{
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
@@ -103,44 +103,52 @@ const Services = () => {
                     WebkitTransform: 'rotateY(180deg)'
                   }}
                 >
-                  {/* Patrón de fondo sutil */}
-                  <div className="absolute inset-0 opacity-10" style={{
-                    backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)',
-                    backgroundSize: '20px 20px'
-                  }}></div>
+                  {/* Patrón geométrico de fondo */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="absolute top-4 left-4 w-8 h-8 border-2 border-primary rotate-45"></div>
+                    <div className="absolute top-8 right-6 w-6 h-6 bg-secondary rounded-full"></div>
+                    <div className="absolute bottom-6 left-8 w-4 h-4 bg-primary rounded-full"></div>
+                    <div className="absolute bottom-4 right-4 w-10 h-10 border-2 border-secondary rotate-12"></div>
+                  </div>
 
-                  <div className="relative z-10 text-center">
-                    <p className="text-sm font-semibold mb-4 px-2 py-1 bg-white/70 text-gray-900 rounded-full inline-block uppercase tracking-wide shadow-sm font-montserrat">
-                      {service.title}
-                    </p>
-                    <p className="text-base mb-4 font-medium text-gray-800 leading-relaxed">
-                      {service.shortDescription}
-                    </p>
-                    <ul className="space-y-2 text-sm font-semibold text-gray-900">
-                      {service.features.map((feature, i) => (
-                        <li
-                          key={i}
-                          className="flex items-center justify-center bg-white/70 px-3 py-1 rounded-full shadow-sm"
-                        >
-                          <span className="mr-2 text-primary">•</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Banda decorativa superior */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-alternative to-secondary"></div>
+
+                  <div className="relative z-10 text-center px-2">
+                    {/* Título destacado */}
+                    <div className="mb-6">
+                      <h4 className="text-lg font-bold text-secondary uppercase tracking-wide font-montserrat mb-2">
+                        {service.title}
+                      </h4>
+                      <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                    </div>
+
+                    {/* Descripción con mejor tipografía */}
+                    <div className="bg-white/70 rounded-lg p-4 shadow-sm border border-gray-200/50">
+                      <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                        {service.description}
+                      </p>
+                    </div>
+
+                    {/* Botón de acción */}
+                    <div className="mt-6">
+                      <div className="inline-flex items-center text-xs font-semibold text-gray-800 bg-secondary/30 px-3 py-1.5 rounded-full">
+                        <span className="w-2 h-2 bg-secondary rounded-full mr-2 animate-pulse"></span>
+                        Servicio Disponible
+                      </div>
+                    </div>
 
                     {/* Botón para volver en móviles */}
                     <button
                       onClick={() => toggleCardFlip(index)}
-                      className="sm:hidden mt-4 bg-white/70 text-gray-800 px-4 py-2 rounded-lg text-sm font-bold shadow-md hover:bg-gray-100 transition-colors"
+                      className="sm:hidden mt-4 bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md hover:bg-primary/90 transition-colors"
                     >
                       Volver
                     </button>
                   </div>
 
-                  {/* Efecto de brillo al hover */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-primary to-transparent blur-md"></div>
-                  </div>
+                  {/* Efecto de brillo sutil */}
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-2xl"></div>
                 </div>
               </div>
             </div>
@@ -150,7 +158,7 @@ const Services = () => {
         {/* CTA (se mantiene igual) */}
         <div className="mt-16 text-center">
           <p className="text-lg text-gray-800 mb-6">
-            ¿Te interesa contratar algun servicio?
+            ¿Te interesa contratar algún servicio?
           </p>
           <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat rounded-lg hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30">
             DETALLES DE LOS SERVICIOS
