@@ -82,7 +82,7 @@ const Services = () => {
                   </div>
 
                   {/* Efecto de borde animado */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary rounded-xl transition-all duration-500 pointer-events-none"></div>
+                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-secondary/80 rounded-xl transition-all duration-500 pointer-events-none"></div>
 
                   {/* Botón para móviles */}
                   <button
@@ -103,52 +103,37 @@ const Services = () => {
                     WebkitTransform: 'rotateY(180deg)'
                   }}
                 >
-                  {/* Patrón geométrico de fondo */}
-                  <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-4 left-4 w-8 h-8 border-2 border-primary rotate-45"></div>
-                    <div className="absolute top-8 right-6 w-6 h-6 bg-secondary rounded-full"></div>
-                    <div className="absolute bottom-6 left-8 w-4 h-4 bg-primary rounded-full"></div>
-                    <div className="absolute bottom-4 right-4 w-10 h-10 border-2 border-secondary rotate-12"></div>
-                  </div>
 
                   {/* Banda decorativa superior */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-alternative to-secondary"></div>
 
-                  <div className="relative z-10 text-center px-2">
+                  <div className="relative z-10 text-center">
                     {/* Título destacado */}
                     <div className="mb-6">
                       <h4 className="text-lg font-bold text-secondary uppercase tracking-wide font-montserrat mb-2">
                         {service.title}
                       </h4>
-                      <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+                      <div className="w-16 h-0.5 bg-gradient-to-r from-secondary to-secondary/80 mx-auto"></div>
                     </div>
 
                     {/* Descripción con mejor tipografía */}
-                    <div className="bg-white/70 rounded-lg p-4 shadow-sm border border-gray-200/50">
-                      <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                    <div className="bg-white/70 rounded-lg p-1 shadow-sm border border-gray-200/50">
+                      <p className="text-sm text-gray-700 leading-relaxed font-sm">
                         {service.description}
                       </p>
-                    </div>
-
-                    {/* Botón de acción */}
-                    <div className="mt-6">
-                      <div className="inline-flex items-center text-xs font-semibold text-gray-800 bg-secondary/30 px-3 py-1.5 rounded-full">
-                        <span className="w-2 h-2 bg-secondary rounded-full mr-2 animate-pulse"></span>
-                        Servicio Disponible
-                      </div>
                     </div>
 
                     {/* Botón para volver en móviles */}
                     <button
                       onClick={() => toggleCardFlip(index)}
-                      className="sm:hidden mt-4 bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md hover:bg-primary/90 transition-colors"
+                      className="sm:hidden mt-4 bg-secondary text-black px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-secondary/80 transition-colors"
                     >
                       Volver
                     </button>
                   </div>
 
                   {/* Efecto de brillo sutil */}
-                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-2xl"></div>
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-secondary/5 to-transparent rounded-full blur-2xl"></div>
                 </div>
               </div>
             </div>
@@ -160,7 +145,7 @@ const Services = () => {
           <p className="text-lg text-gray-800 mb-6">
             ¿Te interesa contratar algún servicio?
           </p>
-          <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat rounded-lg hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30">
+          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30">
             DETALLES DE LOS SERVICIOS
           </button>
         </div>

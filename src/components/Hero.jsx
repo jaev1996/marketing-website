@@ -49,14 +49,14 @@ const Hero = () => {
         </p>
 
         {/* Botón con hover sofisticado */}
-        <button className="bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat px-6 py-4 rounded-lg font-medium hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30 transform hover:scale-105">
+        <button className="bg-secondary text-gray-900 font-montserrat px-6 py-4 rounded-lg font-medium hover:bg-secondary/90 transition-all shadow-lg hover:shadow-secondary/20 transform hover:scale-105">
           COMIENZA AHORA
         </button>
 
         {/* Flecha animada para scroll */}
         <div className="mt-20 animate-bounce">
           <svg
-            className="w-8 h-8 mx-auto text-primary"
+            className="w-8 h-8 mx-auto text-secondary"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
