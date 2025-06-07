@@ -127,7 +127,7 @@ const Contact = () => {
 
           {/* Formulario */}
           <div className="lg:w-1/2">
-            <div className="bg-white rounded-xl shadow-sm border border-primary/30 p-8 h-full">
+            <div className="bg-white rounded-xl shadow-sm border border-secondary/30 p-8 h-full">
               {isSubmitted ? (
                 <div className="text-center py-8 h-full flex flex-col justify-center">
                   <FiCheckCircle className="w-16 h-16 text-secondary mx-auto mb-4" />
@@ -135,7 +135,7 @@ const Contact = () => {
                   <p className="text-gray-700 mb-6">Te contactaremos en menos de 24 horas.</p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="bg-secondary text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-primary transition mx-auto"
+                    className="bg-secondary text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-secondary/70 transition mx-auto"
                   >
                     Nuevo mensaje
                   </button>
@@ -151,7 +151,7 @@ const Contact = () => {
                         id="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 border border-primary/30 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition text-gray-900 bg-white"
+                        className="w-full px-4 py-3 border border-secondary/30 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition text-gray-900 bg-white"
                         placeholder="Ej: María González"
                         required
                       />
@@ -164,7 +164,7 @@ const Contact = () => {
                         id="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 border border-primary/30 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition text-gray-900 bg-white"
+                        className="w-full px-4 py-3 border border-secondary/30 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition text-gray-900 bg-white"
                         placeholder="Ej: contacto@tudominio.com"
                         required
                       />
@@ -177,7 +177,7 @@ const Contact = () => {
                         rows="4"
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 border border-primary/30 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition text-gray-900 bg-white"
+                        className="w-full px-4 py-3 border border-secondary/30 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition text-gray-900 bg-white"
                         placeholder="Describe tu proyecto, necesidades y objetivos..."
                         required
                       ></textarea>
@@ -187,7 +187,7 @@ const Contact = () => {
                       <input
                         type="checkbox"
                         id="privacy"
-                        className="mt-1 w-4 h-4 text-secondary rounded focus:ring-primary"
+                        className="mt-1 w-4 h-4 text-secondary rounded focus:ring-seondary"
                         required
                       />
                       <label htmlFor="privacy" className="ml-2 text-sm text-gray-900">
@@ -197,7 +197,7 @@ const Contact = () => {
 
                     <button
                       type="submit"
-                      className="w-full bg-secondary text-gray-900 py-3 px-6 rounded-lg font-bold hover:bg-primary transition-all shadow hover:shadow-md flex items-center justify-center gap-2 font-montserrat"
+                      className="w-full bg-secondary text-gray-900 py-3 px-6 rounded-lg font-bold transition-all shadow hover:shadow-lg hover:bg-secondary/70 flex items-center justify-center gap-2 font-montserrat transform hover:scale-105"
                     >
                       <FiSend /> Enviar mensaje
                     </button>

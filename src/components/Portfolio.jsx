@@ -11,6 +11,7 @@ const Portfolio = () => {
     { name: "Constripro", logo: "/marcas/constripro-8.png" },
     { name: "Dibar", logo: "/marcas/dibar-8.png" },
     { name: "Green City", logo: "/marcas/green city-8.png" },
+    { name: "Lola Original", logo: "/marcas/lola-original-8.png" },
     { name: "Mapa", logo: "/marcas/mapa-8.png" },
     { name: "O11ce", logo: "/marcas/o11ce-8.png" },
     { name: "Once", logo: "/marcas/once-8.png" },
@@ -57,7 +58,7 @@ const Portfolio = () => {
 
         {/* CTA al final */}
         <div className="text-center mt-16">
-          <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-secondary to-primary text-gray-900 font-montserrat rounded-lg hover:from-primary hover:to-secondary transition-all shadow-lg hover:shadow-primary/30">
+          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat rounded-lg hover:bg-secondary/70 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
             CONOCE NUESTROS SERVICIOS <FiArrowRight className="ml-2" />
           </button>
         </div>

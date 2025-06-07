@@ -8,7 +8,7 @@ const About = () => {
           {/* Columna de texto con jerarquía mejorada */}
           <div className="lg:w-1/2 space-y-8">
             {/* Badge de introducción */}
-            <span className="inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-full text-sm font-semibold">
+            <span className="inline-block px-4 py-2 bg-secondary/30 text-secondary rounded-full text-sm font-semibold">
               ¡Eleva tu Presencia Digital con Nosotros!
             </span>
 

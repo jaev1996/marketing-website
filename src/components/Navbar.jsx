@@ -20,9 +20,18 @@ const Navbar = () => {
           {/* Logo con efecto hover */}
           <a
             href="#"
-            className="text-2xl font-bold font-montserrat text-transparent bg-clip-text bg-secondary"
+            className="flex items-center group"
+            style={{ minHeight: '48px' }}
           >
-            ELEVA
+            <img
+              src="/eleva.png"
+              alt="Logo ELEVA"
+              className="h-12 w-auto transition-all duration-300 drop-shadow-none group-hover:drop-shadow-[0_0_16px_var(--tw-shadow-color)]"
+              style={{
+                filter: 'drop-shadow(0 0 0 transparent)',
+                '--tw-shadow-color': 'rgba(186,197,170,0.7)'
+              }}
+            />
           </a>
 
           {/* Menú para desktop (oculto en móviles) */}

@@ -30,9 +30,7 @@ const Footer = () => {
           {/* Columna logo + descripción */}
           <div>
             <div className="flex items-center mb-4">
-              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-secondary to-primary font-montserrat">
-                ELEVA
-              </h2>
+              <img src="/eleva.png" alt="ELEVA logo" className="h-10 w-auto" />
             </div>
             <p className="mb-6 text-white">Soluciones digitales que impulsan tu crecimiento en mercados globales.</p>
 
@@ -105,7 +103,7 @@ const Footer = () => {
             <p className="text-sm mb-4 md:mb-0 text-secondary">
               &copy; {new Date().getFullYear()} ELEVA. Todos los derechos reservados.
             </p>
-            <div className="flex flex-col md:flex-row md:space-x-6 text-sm text-primary items-center">
+            <div className="flex flex-col md:flex-row md:space-x-6 text-sm text-secondary items-center">
               <div className="flex items-center gap-2">
                 <FiMail className="w-4 h-4" /> contacto@agencix.com
               </div>

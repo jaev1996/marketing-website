@@ -49,7 +49,7 @@ const Hero = () => {
         </p>
 
         {/* Botón con hover sofisticado */}
-        <button className="bg-secondary text-gray-900 font-montserrat px-6 py-4 rounded-lg font-medium hover:bg-secondary/90 transition-all shadow-lg hover:shadow-secondary/20 transform hover:scale-105">
+        <button className="bg-secondary text-gray-900 font-montserrat px-6 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-secondary/20 transform hover:scale-105">
           COMIENZA AHORA
         </button>
 
