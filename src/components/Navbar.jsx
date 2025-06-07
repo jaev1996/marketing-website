@@ -13,6 +13,15 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Definir el array de secciones con nombre en español y href correcto
+  const navLinks = [
+    { label: 'Servicios', href: '#services' },
+    { label: 'Nosotros', href: '#about' },
+    { label: 'Equipo', href: '#team' },
+    { label: 'FAQ', href: '#minifaq' },
+    { label: 'Contacto', href: '#contact' }
+  ];
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/90 backdrop-blur-md py-2 shadow-xl" : "bg-gray-950 py-4"}`}>
       <div className="container mx-auto px-4">
@@ -22,6 +31,13 @@ const Navbar = () => {
             href="#"
             className="flex items-center group"
             style={{ minHeight: '48px' }}
+            onClick={e => {
+              e.preventDefault();
+              const el = document.querySelector('body');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             <img
               src="/eleva.png"
@@ -36,13 +52,22 @@ const Navbar = () => {
 
           {/* Menú para desktop (oculto en móviles) */}
           <ul className="hidden md:flex space-x-8">
-            {['Servicios', 'Nosotros', 'Portafolio', 'Contacto'].map((item, index) => (
+            {navLinks.map((item, index) => (
               <li key={index}>
                 <a
-                  href={`#${item.toLowerCase()}`}
+                  href={item.href}
                   className="relative group text-white font-montserrat hover:text-secondary transition-colors duration-200"
+                  onClick={e => {
+                    if (item.href.startsWith('#')) {
+                      e.preventDefault();
+                      const el = document.querySelector(item.href === '#' ? 'body' : item.href);
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                  }}
                 >
-                  {item}
+                  {item.label}
                   <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-secondary transition-all duration-500 group-hover:w-full"></span>
                 </a>
               </li>
@@ -72,14 +97,23 @@ const Navbar = () => {
         {/* Menú móvil (animado) */}
         <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${mobileMenuOpen ? "max-h-96 mt-4" : "max-h-0"}`}>
           <ul className="flex flex-col space-y-4 py-4">
-            {['Servicios', 'Nosotros', 'Portafolio', 'Contacto'].map((item, index) => (
+            {navLinks.map((item, index) => (
               <li key={index}>
                 <a
-                  href={`#${item.toLowerCase()}`}
+                  href={item.href}
                   className="block py-2 text-white font-montserrat hover:text-secondary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={e => {
+                    if (item.href.startsWith('#')) {
+                      e.preventDefault();
+                      const el = document.querySelector(item.href === '#' ? 'body' : item.href);
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                    setMobileMenuOpen(false);
+                  }}
                 >
-                  {item}
+                  {item.label}
                 </a>
               </li>
             ))}

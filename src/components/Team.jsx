@@ -98,8 +98,8 @@ const Team = () => {
 
         {/* CTA opcional */}
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-primary to-secondary text-gray-800 px-8 py-3 rounded-lg font-bold hover:from-secondary hover:to-primary transition-all shadow-lg hover:shadow-secondary/30">
-            Únete a nuestro equipo
+          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
+            ÚNETE A NUESTRO EQUIPO
           </button>
         </div>
       </div>

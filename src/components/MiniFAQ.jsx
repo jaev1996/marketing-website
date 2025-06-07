@@ -25,8 +25,8 @@ const MiniFAQ = () => {
     ];
 
     return (
-        <section className="py-12 bg-black text-white">
-            <div className="container mx-auto px-4 max-w-3xl">
+        <section id='minifaq' className="py-12 bg-black text-white">
+            <div className="container mx-auto px-4 py-4 max-w-3xl">
                 <div className="text-center mb-8">
                     <span className="inline-block px-4 py-2 bg-secondary/30 text-secondary rounded-full text-sm font-semibold mb-4">
                         Resolvemos tus dudas
