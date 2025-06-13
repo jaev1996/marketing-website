@@ -1,16 +1,107 @@
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 import { services } from "../data/services";
 import './montserrat.css';
+
+// Tarjeta de servicio optimizada con React.memo
+const ServiceCard = memo(function ServiceCard({ service, index, flipped, onFlip }) {
+  return (
+    <div
+      className="group h-82 transition-all duration-500 hover:scale-[1.02] overflow-visible will-change-transform"
+      style={{
+        perspective: '1000px',
+        WebkitPerspective: '1000px',
+      }}
+    >
+      <div
+        className="relative h-full w-full transition-transform duration-700 shadow-xl rounded-xl"
+        style={{
+          transformStyle: 'preserve-3d',
+          WebkitTransformStyle: 'preserve-3d',
+          transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+          WebkitTransform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+          transition: 'transform 0.7s cubic-bezier(0.4,0,0.2,1)',
+          WebkitTransition: '-webkit-transform 0.7s cubic-bezier(0.4,0,0.2,1)',
+          willChange: 'transform',
+        }}
+        onMouseEnter={() => {
+          if (window.innerWidth >= 640) onFlip(index, true);
+        }}
+        onMouseLeave={() => {
+          if (window.innerWidth >= 640) onFlip(index, false);
+        }}
+      >
+        {/* Frente de la tarjeta */}
+        <div
+          className="absolute inset-0 bg-secondary rounded-xl p-6 flex flex-col items-center justify-center border-2 border-primary/30 overflow-hidden"
+          style={{
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden',
+            transform: 'rotateY(0deg)',
+            WebkitTransform: 'rotateY(0deg)',
+          }}
+        >
+          <div className="absolute -right-10 -top-10 w-32 h-32 bg-primary opacity-10 rounded-full blur-xl"></div>
+          <div className="relative z-10 text-center p-4">
+            <div className="mb-3 mx-auto w-26 h-1 bg-gradient-to-r from-white/70 to-white/30 rounded-full"></div>
+            <h3 className="text-3xl font-bold text-gray-900 uppercase font-montserrat">
+              {service.title}
+            </h3>
+          </div>
+          <div className="absolute inset-0 border-2 border-transparent group-hover:border-secondary/80 rounded-xl transition-all duration-500 pointer-events-none"></div>
+          <button
+            onClick={() => onFlip(index, !flipped)}
+            className="sm:hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/70 text-gray-900 px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-white transition-colors"
+          >
+            Ver más
+          </button>
+        </div>
+        {/* Parte trasera de la tarjeta */}
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-xl p-6 flex flex-col justify-center text-gray-900 overflow-hidden border-2 border-primary/20"
+          style={{
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden',
+            transform: 'rotateY(180deg)',
+            WebkitTransform: 'rotateY(180deg)',
+          }}
+        >
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-alternative to-secondary"></div>
+          <div className="relative z-10 text-center">
+            <div className="mb-6">
+              <h4 className="text-lg font-bold text-secondary uppercase tracking-wide font-montserrat mb-2">
+                {service.title}
+              </h4>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-secondary to-secondary/80 mx-auto"></div>
+            </div>
+            <div className="bg-white/70 rounded-lg p-1 shadow-sm border border-gray-200/50">
+              <p className="text-sm text-gray-700 leading-relaxed font-sm">
+                {service.description}
+              </p>
+            </div>
+            <button
+              onClick={() => onFlip(index, !flipped)}
+              className="sm:hidden mt-4 bg-secondary text-black px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-secondary/80 transition-colors"
+            >
+              Volver
+            </button>
+          </div>
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-secondary/5 to-transparent rounded-full blur-2xl"></div>
+        </div>
+      </div>
+    </div>
+  );
+});
 
 const Services = () => {
   const [flippedCards, setFlippedCards] = useState({});
 
-  const toggleCardFlip = (index) => {
+  // Memoiza la función para evitar recrearla en cada render
+  const toggleCardFlip = useCallback((index, value) => {
     setFlippedCards(prev => ({
       ...prev,
-      [index]: !prev[index]
+      [index]: value,
     }));
-  };
+  }, []);
 
   return (
     <section id="services" className="py-20 bg-white text-gray-950 font-sans">
@@ -27,119 +118,18 @@ const Services = () => {
             Soluciones digitales que elevan tu negocio
           </p>
         </div>
-
-        {/* Grid de servicios optimizado para Safari */}
+        {/* Grid de servicios optimizada */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <div
+            <ServiceCard
               key={index}
-              className="group h-82 transition-all duration-500 hover:scale-[1.02] overflow-visible"
-              style={{
-                perspective: '1000px',
-                WebkitPerspective: '1000px'
-              }}
-            >
-              <div
-                className="relative h-full w-full transition-transform duration-700 shadow-xl rounded-xl"
-                style={{
-                  transformStyle: 'preserve-3d',
-                  WebkitTransformStyle: 'preserve-3d',
-                  transform: flippedCards[index] ? 'rotateY(180deg)' : 'rotateY(0deg)',
-                  WebkitTransform: flippedCards[index] ? 'rotateY(180deg)' : 'rotateY(0deg)',
-                  transition: 'transform 0.7s',
-                  WebkitTransition: '-webkit-transform 0.7s'
-                }}
-                onMouseEnter={() => {
-                  if (window.innerWidth >= 640) { // Solo en desktop
-                    setFlippedCards(prev => ({ ...prev, [index]: true }));
-                  }
-                }}
-                onMouseLeave={() => {
-                  if (window.innerWidth >= 640) { // Solo en desktop
-                    setFlippedCards(prev => ({ ...prev, [index]: false }));
-                  }
-                }}
-              >
-                {/* Frente de la tarjeta - Versión mejorada */}
-                <div
-                  className="absolute inset-0 bg-secondary rounded-xl p-6 flex flex-col items-center justify-center border-2 border-primary/30 overflow-hidden"
-                  style={{
-                    backfaceVisibility: 'hidden',
-                    WebkitBackfaceVisibility: 'hidden',
-                    transform: 'rotateY(0deg)',
-                    WebkitTransform: 'rotateY(0deg)'
-                  }}
-                >
-                  {/* Efecto de fondo sutil */}
-                  <div className="absolute -right-10 -top-10 w-32 h-32 bg-primary opacity-10 rounded-full blur-xl"></div>
-
-                  {/* Contenedor del título con efecto */}
-                  <div className="relative z-10 text-center p-4">
-                    <div className="mb-3 mx-auto w-26 h-1 bg-gradient-to-r from-white/70 to-white/30 rounded-full"></div>
-                    <h3 className="text-3xl font-bold text-gray-900 uppercase font-montserrat">
-                      {service.title}
-                    </h3>
-                  </div>
-
-                  {/* Efecto de borde animado */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-secondary/80 rounded-xl transition-all duration-500 pointer-events-none"></div>
-
-                  {/* Botón para móviles */}
-                  <button
-                    onClick={() => toggleCardFlip(index)}
-                    className="sm:hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/70 text-gray-900 px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-white transition-colors"
-                  >
-                    Ver más
-                  </button>
-                </div>
-
-                {/* Parte trasera de la tarjeta - MEJORADA */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-xl p-6 flex flex-col justify-center text-gray-900 overflow-hidden border-2 border-primary/20"
-                  style={{
-                    backfaceVisibility: 'hidden',
-                    WebkitBackfaceVisibility: 'hidden',
-                    transform: 'rotateY(180deg)',
-                    WebkitTransform: 'rotateY(180deg)'
-                  }}
-                >
-
-                  {/* Banda decorativa superior */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-alternative to-secondary"></div>
-
-                  <div className="relative z-10 text-center">
-                    {/* Título destacado */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-bold text-secondary uppercase tracking-wide font-montserrat mb-2">
-                        {service.title}
-                      </h4>
-                      <div className="w-16 h-0.5 bg-gradient-to-r from-secondary to-secondary/80 mx-auto"></div>
-                    </div>
-
-                    {/* Descripción con mejor tipografía */}
-                    <div className="bg-white/70 rounded-lg p-1 shadow-sm border border-gray-200/50">
-                      <p className="text-sm text-gray-700 leading-relaxed font-sm">
-                        {service.description}
-                      </p>
-                    </div>
-
-                    {/* Botón para volver en móviles */}
-                    <button
-                      onClick={() => toggleCardFlip(index)}
-                      className="sm:hidden mt-4 bg-secondary text-black px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-secondary/80 transition-colors"
-                    >
-                      Volver
-                    </button>
-                  </div>
-
-                  {/* Efecto de brillo sutil */}
-                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-secondary/5 to-transparent rounded-full blur-2xl"></div>
-                </div>
-              </div>
-            </div>
+              service={service}
+              index={index}
+              flipped={!!flippedCards[index]}
+              onFlip={toggleCardFlip}
+            />
           ))}
         </div>
-
         {/* CTA (se mantiene igual) */}
         <div className="mt-16 text-center">
           <p className="text-lg text-gray-800 mb-6">

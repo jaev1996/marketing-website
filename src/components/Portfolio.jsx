@@ -4,16 +4,17 @@ import './montserrat.css';
 const Portfolio = () => {
   // Logos de clientes reales (archivos locales en public/marcas)
   const clients = [
-    { name: "Almendrina", logo: "/marcas/almendrina-8.png" },
+    { name: "Almendrina", logo: "/marcas/almendrina.png" },
     { name: "Arisa", logo: "/marcas/arisa-8.png" },
     { name: "Bellisima", logo: "/marcas/bellisima-8.png" },
+    //{ name: "Bellisima (Negro)", logo: "/marcas/bellisima-negro-8.png" },
     { name: "Brasero", logo: "/marcas/brasero-8.png" },
-    { name: "Constripro", logo: "/marcas/constripro-8.png" },
+    { name: "Contrucolor", logo: "/marcas/contrucolor-8.png" },
     { name: "Dibar", logo: "/marcas/dibar-8.png" },
-    { name: "Green City", logo: "/marcas/green city-8.png" },
+    { name: "Green City", logo: "/marcas/GREEN CITY 1-8.png" },
     { name: "Lola Original", logo: "/marcas/lola-original-8.png" },
     { name: "Mapa", logo: "/marcas/mapa-8.png" },
-    { name: "O11ce", logo: "/marcas/o11ce-8.png" },
+    { name: "Once (Negro)", logo: "/marcas/ONCE NEGRO.png" },
     { name: "Once", logo: "/marcas/once-8.png" },
     { name: "Polemico", logo: "/marcas/polemico-8.png" },
   ];
@@ -42,7 +43,7 @@ const Portfolio = () => {
                 key={`${client.name}-${index}`}
                 className="group flex w-[180px] shrink-0 items-center justify-center rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-primary/40 hover:border-secondary border border-gray-100"
               >
-                <div className="relative flex items-center justify-center h-26 w-full bg-gray-950 rounded-lg">
+                <div className="relative flex items-center justify-center h-26 w-full bg-gray-800 rounded-lg">
                   <img
                     src={client.logo}
                     alt={client.name}
