@@ -32,7 +32,7 @@ const Hero = () => {
         </p>
 
         {/* Título principal con gradiente y sombra */}
-        <h1 className="text-7xl md:text-7xl font-extrabold font-montserrat-bold mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold font-montserrat-bold mb-6 leading-tight">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-secondary drop-shadow-[0_0_10px_theme('colors.primary'/0.2)]">
             ELEVA Y DIGITALIZA
           </span>
