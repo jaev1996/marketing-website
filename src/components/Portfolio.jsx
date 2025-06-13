@@ -4,19 +4,17 @@ import './montserrat.css';
 const Portfolio = () => {
   // Logos de clientes reales (archivos locales en public/marcas)
   const clients = [
-    { name: "Almendrina", logo: "/marcas/almendrina.png" },
-    { name: "Arisa", logo: "/marcas/arisa-8.png" },
-    { name: "Bellisima", logo: "/marcas/bellisima-8.png" },
-    //{ name: "Bellisima (Negro)", logo: "/marcas/bellisima-negro-8.png" },
-    { name: "Brasero", logo: "/marcas/brasero-8.png" },
-    { name: "Contrucolor", logo: "/marcas/contrucolor-8.png" },
-    { name: "Dibar", logo: "/marcas/dibar-8.png" },
-    { name: "Green City", logo: "/marcas/GREEN CITY 1-8.png" },
-    { name: "Lola Original", logo: "/marcas/lola-original-8.png" },
-    { name: "Mapa", logo: "/marcas/mapa-8.png" },
-    { name: "Once (Negro)", logo: "/marcas/ONCE NEGRO.png" },
-    { name: "Once", logo: "/marcas/once-8.png" },
-    { name: "Polemico", logo: "/marcas/polemico-8.png" },
+    { logo: "/marcas/almendrina.png" },
+    { logo: "/marcas/arisa-8.png" },
+    { logo: "/marcas/bellisima-negro-8.png" },
+    { logo: "/marcas/Brasero-negro.png" },
+    { logo: "/marcas/contrucolor-8.png" },
+    { logo: "/marcas/dibar-negro-8.png" },
+    { logo: "/marcas/GREEN CITY 1-8.png" },
+    { logo: "/marcas/lola-negro-8.png" },
+    { logo: "/marcas/mapa-8.png" },
+    { logo: "/marcas/ONCE NEGRO.png" },
+    { logo: "/marcas/polemico-negro-8.png" },
   ];
 
   // Duplicamos los logos para crear el efecto de carrusel infinito
@@ -40,20 +38,17 @@ const Portfolio = () => {
           <div className="animate-infinite-scroll flex w-[fit-content] items-stretch gap-x-12 hover:[animation-play-state:paused]">
             {duplicatedClients.map((client, index) => (
               <div
-                key={`${client.name}-${index}`}
-                className="group flex w-[180px] shrink-0 items-center justify-center rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-primary/40 hover:border-secondary border border-gray-100"
+                key={index}
+                className="group flex w-[200px] shrink-0 items-center justify-center rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-primary/40 hover:border-secondary border border-gray-100"
               >
-                <div className="relative flex items-center justify-center h-26 w-full bg-gray-800 rounded-lg">
+                <div className="relative flex items-center justify-center h-26 w-full rounded-lg">
                   <img
                     src={client.logo}
-                    alt={client.name}
-                    className="max-h-24 w-auto grayscale-0 opacity-100 transition-all duration-300 font-montserrat-bold"
+                    alt="Logo cliente"
+                    className="max-h-24 w-auto grayscale-0 opacity-100 transition-all duration-300"
                     style={{ objectFit: 'contain', width: '100%' }}
                   />
-                  <div className="absolute inset-0 bg-secondary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-900/70 px-2 py-0.5 rounded font-montserrat-bold mt-2 pointer-events-none select-none">
-                    {client.name}
-                  </span>
+                  {/* Eliminado el span del nombre */}
                 </div>
               </div>
             ))}
