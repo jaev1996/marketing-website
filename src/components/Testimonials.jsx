@@ -40,10 +40,10 @@ const Testimonials = () => {
           <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
             Confían en nosotros
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold font-montserrat mb-4">
+          <h2 className="text-4xl md:text-5xl font-montserrat-bold mb-4">
             Voces de <span className="text-secondary">nuestros clientes</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-montserrat-regular">
             Experiencias reales que reflejan nuestro compromiso
           </p>
         </div>
@@ -78,8 +78,8 @@ const Testimonials = () => {
                     loading="lazy"
                   />
                   <div>
-                    <h4 className="font-bold text-gray-950">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    <h4 className="font-bold text-gray-950 font-montserrat-bold">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-500 font-montserrat-bold">{testimonial.role}</p>
                   </div>
                 </div>
               </div>

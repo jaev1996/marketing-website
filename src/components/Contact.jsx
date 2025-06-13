@@ -48,8 +48,8 @@ const Contact = () => {
     {
       icon: <FiMail className="w-5 h-5" />,
       title: "Correo Electrónico",
-      details: "contacto@agencix.com",
-      action: () => window.location.href = "mailto:contacto@agencix.com",
+      details: "info@eleva.marketing",
+      action: () => window.location.href = "mailto:info@eleva.marketing",
       color: "bg-emerald-100 text-emerald-800"
     },
     {
@@ -76,10 +76,10 @@ const Contact = () => {
           <span className="inline-block px-4 py-2 bg-secondary text-gray-800 rounded-full text-sm font-semibold mb-4">
             Contacto Directo
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat-bold">
             Hablemos de tu <span className="text-secondary">proyecto</span>
           </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto font-montserrat-regular">
             Elige tu método preferido o envíanos un mensaje directo
           </p>
         </div>
@@ -88,7 +88,7 @@ const Contact = () => {
           {/* Columna de métodos de contacto (mismo ancho que el formulario) */}
           <div className="lg:w-1/2">
             <div className="bg-secondary/10 rounded-xl p-8 shadow-sm border border-secondary/50 h-full">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 font-montserrat text-gray-800">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 font-montserrat-bold text-gray-800">
                 <FiCheckCircle className="text-primary" />
                 <span>Contacto Rápido</span>
               </h3>
@@ -110,8 +110,8 @@ const Contact = () => {
                         {method.icon}
                       </div>
                       <div>
-                        <h4 className="font-bold font-montserrat text-gray-900">{method.title}</h4>
-                        <p className="text-sm text-gray-900 whitespace-pre-line">{method.details}</p>
+                        <h4 className="font-bold font-montserrat-bold text-gray-900">{method.title}</h4>
+                        <p className="text-sm text-gray-900 whitespace-pre-line font-montserrat-regular">{method.details}</p>
                         {method.action && (
                           <span className="inline-block mt-2 text-xs font-medium text-gray-600 hover:text-gray-900 transition-colors">
                             Haz clic para contactar
@@ -131,8 +131,8 @@ const Contact = () => {
               {isSubmitted ? (
                 <div className="text-center py-8 h-full flex flex-col justify-center">
                   <FiCheckCircle className="w-16 h-16 text-secondary mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold mb-2 font-montserrat text-secondary">¡Mensaje enviado!</h3>
-                  <p className="text-gray-700 mb-6">Te contactaremos en menos de 24 horas.</p>
+                  <h3 className="text-2xl font-bold mb-2 font-montserrat-bold text-secondary">¡Mensaje enviado!</h3>
+                  <p className="text-gray-700 mb-6 font-montserrat-regular">Te contactaremos en menos de 24 horas.</p>
                   <button
                     onClick={() => setIsSubmitted(false)}
                     className="bg-secondary text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-secondary/70 transition mx-auto"
@@ -142,10 +142,10 @@ const Contact = () => {
                 </div>
               ) : (
                 <>
-                  <h3 className="text-2xl font-bold mb-6 font-montserrat text-gray-800">Formulario de Contacto</h3>
+                  <h3 className="text-2xl font-bold mb-6 font-montserrat-bold text-gray-800">Formulario de Contacto</h3>
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Nombre completo*</label>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat-regular">Nombre completo*</label>
                       <input
                         type="text"
                         id="name"
@@ -158,7 +158,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Correo electrónico*</label>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat-regular">Correo electrónico*</label>
                       <input
                         type="email"
                         id="email"
@@ -171,7 +171,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Mensaje*</label>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat-regular">Mensaje*</label>
                       <textarea
                         id="message"
                         rows="4"
@@ -190,7 +190,7 @@ const Contact = () => {
                         className="mt-1 w-4 h-4 text-secondary rounded focus:ring-seondary"
                         required
                       />
-                      <label htmlFor="privacy" className="ml-2 text-sm text-gray-900">
+                      <label htmlFor="privacy" className="ml-2 text-sm text-gray-900 font-montserrat-regular">
                         Acepto la política de privacidad y el tratamiento de mis datos
                       </label>
                     </div>

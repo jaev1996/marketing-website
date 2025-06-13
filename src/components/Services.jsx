@@ -43,7 +43,7 @@ const ServiceCard = memo(function ServiceCard({ service, index, flipped, onFlip 
           <div className="absolute -right-10 -top-10 w-32 h-32 bg-primary opacity-10 rounded-full blur-xl"></div>
           <div className="relative z-10 text-center p-4">
             <div className="mb-3 mx-auto w-26 h-1 bg-gradient-to-r from-white/70 to-white/30 rounded-full"></div>
-            <h3 className="text-3xl font-bold text-gray-900 uppercase font-montserrat">
+            <h3 className="text-3xl font-bold text-gray-900 uppercase font-montserrat-bold">
               {service.title}
             </h3>
           </div>
@@ -68,13 +68,13 @@ const ServiceCard = memo(function ServiceCard({ service, index, flipped, onFlip 
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-alternative to-secondary"></div>
           <div className="relative z-10 text-center">
             <div className="mb-6">
-              <h4 className="text-lg font-bold text-secondary uppercase tracking-wide font-montserrat mb-2">
+              <h4 className="text-lg font-bold text-secondary uppercase tracking-wide font-montserrat-bold mb-2">
                 {service.title}
               </h4>
               <div className="w-16 h-0.5 bg-gradient-to-r from-secondary to-secondary/80 mx-auto"></div>
             </div>
             <div className="bg-white/70 rounded-lg p-1 shadow-sm border border-gray-200/50">
-              <p className="text-sm text-gray-700 leading-relaxed font-sm">
+              <p className="text-sm text-gray-700 leading-relaxed font-montserrat-regular">
                 {service.description}
               </p>
             </div>
@@ -111,10 +111,10 @@ const Services = () => {
           <span className="inline-block px-3 py-1 text-sm font-semibold text-gray-800 bg-secondary rounded-full mb-4">
             Lo que ofrecemos
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat-bold">
             Nuestros <span className="text-secondary">Servicios</span>
           </h2>
-          <p className="text-xl text-gray-800 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-800 max-w-2xl mx-auto font-montserrat-regular">
             Soluciones digitales que elevan tu negocio
           </p>
         </div>
@@ -135,7 +135,7 @@ const Services = () => {
           <p className="text-lg text-gray-800 mb-6">
             ¿Te interesa contratar algún servicio?
           </p>
-          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
+          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat-bold rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
             DETALLES DE LOS SERVICIOS
           </button>
         </div>

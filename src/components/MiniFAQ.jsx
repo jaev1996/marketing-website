@@ -31,17 +31,17 @@ const MiniFAQ = () => {
                     <span className="inline-block px-4 py-2 bg-secondary/30 text-secondary rounded-full text-sm font-semibold mb-4">
                         Resolvemos tus dudas
                     </span>
-                    <h3 className="text-3xl md:text-4xl font-bold font-montserrat mb-2">Preguntas Frecuentes</h3>
-                    <p className="text-gray-400 text-lg">Respuestas rápidas a tus dudas más comunes</p>
+                    <h3 className="text-3xl md:text-4xl font-bold font-montserrat-bold mb-2">Preguntas Frecuentes</h3>
+                    <p className="text-gray-400 text-lg font-montserrat-regular">Respuestas rápidas a tus dudas más comunes</p>
                 </div>
                 <div className="space-y-4">
                     {faqs.map((item, i) => (
                         <details key={i} className="group rounded-lg bg-secondary/30 px-6 py-4 cursor-pointer transition-all border border-secondary/70">
-                            <summary className="flex items-center justify-between font-semibold text-lg font-montserrat text-secondary">
+                            <summary className="flex items-center justify-between font-semibold text-lg font-montserrat-bold text-secondary">
                                 {item.q}
                                 <span className="ml-2 text-secondary group-open:rotate-90 transition-transform">▶</span>
                             </summary>
-                            <div className="mt-2 text-gray-200 text-base pl-2">
+                            <div className="mt-2 text-gray-200 text-base pl-2 font-montserrat-regular">
                                 {item.a}
                             </div>
                         </details>

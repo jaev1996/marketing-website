@@ -27,29 +27,29 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 text-center relative z-10">
         {/* Subtítulo con efecto */}
-        <p className="text-secondary mb-2 font-mono animate-pulse">
+        <p className="text-secondary mb-2 font-mono font-montserrat-regular animate-pulse">
           Agencia de Marketing Digital
         </p>
 
         {/* Título principal con gradiente y sombra */}
-        <h1 className="text-6xl md:text-7xl font-extrabold font-montserrat mb-6">
+        <h1 className="text-7xl md:text-7xl font-extrabold font-montserrat-bold mb-6">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-secondary drop-shadow-[0_0_10px_theme('colors.primary'/0.2)]">
             ELEVA Y DIGITALIZA
           </span>
           <br />
-          <span className="text-white drop-shadow-[0_0_15px_rgba(181,220,202,0.3)]">
+          <span className="text-white drop-shadow-[0_0_15px_rgba(181,220,202,0.3)] font-montserrat-bold">
             TU NEGOCIO
           </span>
         </h1>
 
         {/* Descripción con animación sutil */}
-        <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 opacity-90 animate-fade-in">
+        <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-10 opacity-90 animate-fade-in font-montserrat-regular">
           Hoy en día hay más personas en internet, que en la calle {" "}
-          <span className="font-semibold text-secondary">¿Cómo es que tu negocio no está? </span>
+          <span className="font-semibold text-secondary font-montserrat-bold">¿Cómo es que tu negocio no está? </span>
         </p>
 
         {/* Botón con hover sofisticado */}
-        <button className="bg-secondary text-gray-900 font-montserrat px-6 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-secondary/20 transform hover:scale-105">
+        <button className="bg-secondary text-gray-900 font-montserrat-bold px-6 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-secondary/20 transform hover:scale-105">
           COMIENZA AHORA
         </button>
 

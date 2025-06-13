@@ -12,15 +12,15 @@ const About = () => {
               ¡Eleva tu Presencia Digital con Nosotros!
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight font-montserrat text-white">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight font-montserrat-bold text-white">
               ¿Quienes Somos?
             </h2>
 
             <div className="space-y-6">
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-300 leading-relaxed font-montserrat-regular">
                 En un mundo saturado de promesas vacías y falsas expectativas, en Eleva nos destacamos por nuestra transparencia, y compromiso firme con tu marca.
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-300 leading-relaxed font-montserrat-regular">
                 Nuestro enfoque se basa en desarrollar ideas creativas que no solo captan atención, si no que convierten. Porque entendemos que lo realmente importante son los resultados tangibles y medibles.
               </p>
 
@@ -36,7 +36,7 @@ const About = () => {
                     <svg className="w-5 h-5 text-primary mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span className="text-gray-200">{item}</span>
+                    <span className="text-gray-200 font-montserrat-regular">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -45,16 +45,16 @@ const About = () => {
             {/* Datos estadísticos (opcional) */}
             <div className="flex flex-wrap gap-6 pt-4">
               <div className="text-center group transition-all">
-                <p className="text-3xl font-bold text-secondary font-montserrat transition-all duration-300 group-hover:text-primary group-hover:drop-shadow-[0_0_12px_theme('colors.secondary')] cursor-pointer">
+                <p className="text-3xl font-bold text-secondary font-montserrat-bold transition-all duration-300 group-hover:text-primary group-hover:drop-shadow-[0_0_12px_theme('colors.secondary')] cursor-pointer">
                   +50
                 </p>
-                <p className="text-gray-400 text-sm transition-all duration-300 group-hover:text-white">Clientes satisfechos</p>
+                <p className="text-gray-400 text-sm transition-all duration-300 group-hover:text-white font-montserrat-regular">Clientes satisfechos</p>
               </div>
               <div className="text-center group transition-all">
-                <p className="text-3xl font-bold text-secondary font-montserrat transition-all duration-300 group-hover:text-primary group-hover:drop-shadow-[0_0_12px_theme('colors.secondary')] cursor-pointer">
+                <p className="text-3xl font-bold text-secondary font-montserrat-bold transition-all duration-300 group-hover:text-primary group-hover:drop-shadow-[0_0_12px_theme('colors.secondary')] cursor-pointer">
                   +120
                 </p>
-                <p className="text-gray-400 text-sm transition-all duration-300 group-hover:text-white">Proyectos exitosos</p>
+                <p className="text-gray-400 text-sm transition-all duration-300 group-hover:text-white font-montserrat-regular">Proyectos exitosos</p>
               </div>
             </div>
           </div>

@@ -32,7 +32,7 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <img src="/eleva.png" alt="ELEVA logo" className="h-10 w-auto" />
             </div>
-            <p className="mb-6 text-white">Soluciones digitales que impulsan tu crecimiento en mercados globales.</p>
+            <p className="mb-6 text-white">Agencia de Marketing Digital.</p>
 
             {/* Redes sociales con iconos */}
             <div className="flex space-x-4">
@@ -57,7 +57,7 @@ const Footer = () => {
           {/* Columnas de enlaces */}
           {footerLinks.slice(0, 2).map((column, index) => (
             <div key={index}>
-              <h3 className="text-secondary font-bold text-lg mb-4 font-montserrat">{column.title}</h3>
+              <h3 className="text-secondary font-bold text-lg mb-4 font-montserrat-bold">{column.title}</h3>
               <ul className="space-y-3">
                 {column.links.filter(link =>
                   (column.title === "Servicios" && [
@@ -70,7 +70,7 @@ const Footer = () => {
                   <li key={i}>
                     <a
                       href={link.href}
-                      className="text-white hover:text-secondary transition-colors flex items-start"
+                      className="text-white hover:text-secondary transition-colors flex items-start font-montserrat-regular"
                     >
                       <span className="w-1 h-1 bg-white rounded-full mt-2 mr-2"></span>
                       {link.name}
@@ -83,15 +83,15 @@ const Footer = () => {
 
           {/* Columna de contacto (en vez de legal) */}
           <div>
-            <h3 className="text-secondary font-bold text-lg mb-4 font-montserrat">Contacto</h3>
+            <h3 className="text-secondary font-bold text-lg mb-4 font-montserrat-bold">Contacto</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <FiMail className="w-5 h-5 text-white mr-2 mt-0.5" />
-                <span className="text-white">contacto@agencix.com</span>
+                <span className="text-white font-montserrat-regular">info@eleva.marketing</span>
               </li>
               <li className="flex items-start">
                 <FiPhone className="w-5 h-5 text-white mr-2 mt-0.5" />
-                <span className="text-white">+58 424 2368587</span>
+                <span className="text-white font-montserrat-regular">+58 424 2368587</span>
               </li>
             </ul>
           </div>
@@ -100,14 +100,14 @@ const Footer = () => {
         {/* División y copyright */}
         <div className="border-t border-secondary/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm mb-4 md:mb-0 text-secondary">
+            <p className="text-sm mb-4 md:mb-0 text-secondary font-montserrat-regular">
               &copy; {new Date().getFullYear()} ELEVA. Todos los derechos reservados.
             </p>
             <div className="flex flex-col md:flex-row md:space-x-6 text-sm text-secondary items-center">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 font-montserrat-regular">
                 <FiMail className="w-4 h-4" /> contacto@agencix.com
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 font-montserrat-regular">
                 <FiPhone className="w-4 h-4" /> +58 424 2368587
               </div>
             </div>

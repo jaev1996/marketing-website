@@ -30,7 +30,7 @@ const Portfolio = () => {
           <span className="inline-block px-4 py-2 bg-secondary text-gray-800 rounded-full text-sm font-semibold mb-4">
             Nuestros Clientes
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat-bold">
             Marcas que <span className="text-secondary">Confían</span> en Nosotros
           </h2>
         </div>
@@ -47,10 +47,13 @@ const Portfolio = () => {
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-24 w-auto grayscale-0 opacity-100 transition-all duration-300"
+                    className="max-h-24 w-auto grayscale-0 opacity-100 transition-all duration-300 font-montserrat-bold"
                     style={{ objectFit: 'contain', width: '100%' }}
                   />
                   <div className="absolute inset-0 bg-secondary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-900/70 px-2 py-0.5 rounded font-montserrat-bold mt-2 pointer-events-none select-none">
+                    {client.name}
+                  </span>
                 </div>
               </div>
             ))}
@@ -59,7 +62,7 @@ const Portfolio = () => {
 
         {/* CTA al final */}
         <div className="text-center mt-16">
-          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat rounded-lg hover:bg-secondary/70 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
+          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat-bold rounded-lg hover:bg-secondary/70 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
             CONOCE NUESTROS SERVICIOS <FiArrowRight className="ml-2" />
           </button>
         </div>

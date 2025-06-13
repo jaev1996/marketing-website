@@ -56,7 +56,7 @@ const Navbar = () => {
               <li key={index}>
                 <a
                   href={item.href}
-                  className="relative group text-white font-montserrat hover:text-secondary transition-colors duration-200"
+                  className="relative group text-white font-montserrat-regular hover:text-secondary transition-colors duration-200"
                   onClick={e => {
                     if (item.href.startsWith('#')) {
                       e.preventDefault();
@@ -75,7 +75,7 @@ const Navbar = () => {
           </ul>
 
           {/* Botón de contacto (solo desktop) */}
-          <button className="hidden md:block bg-secondary text-gray-900 font-montserrat px-6 py-2 rounded-lg font-medium hover:bg-secondary/90 transition-all shadow-lg hover:shadow-secondary/20">
+          <button className="hidden md:block bg-secondary text-gray-900 font-montserrat-bold px-6 py-2 rounded-lg font-medium hover:bg-secondary/90 transition-all shadow-lg hover:shadow-secondary/20">
             ¡Hablemos!
           </button>
 
@@ -101,7 +101,7 @@ const Navbar = () => {
               <li key={index}>
                 <a
                   href={item.href}
-                  className="block py-2 text-white font-montserrat hover:text-secondary transition-colors"
+                  className="block py-2 text-white font-montserrat-regular hover:text-secondary transition-colors"
                   onClick={e => {
                     if (item.href.startsWith('#')) {
                       e.preventDefault();
@@ -118,7 +118,7 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <button className="w-full bg-secondary text-gray-900 font-montserrat px-4 py-2 rounded-lg font-medium mt-2 hover:bg-secondary/80 transition-colors shadow-lg hover:shadow-secondary/30">
+              <button className="w-full bg-secondary text-gray-900 font-montserrat-bold px-4 py-2 rounded-lg font-medium mt-2 hover:bg-secondary/80 transition-colors shadow-lg hover:shadow-secondary/30">
                 Contactar
               </button>
             </li>

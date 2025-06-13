@@ -57,7 +57,7 @@ const Team = () => {
           <span className="inline-block px-3 py-1 text-sm font-semibold text-gray-800 bg-secondary rounded-full mb-4">
             Conoce al equipo
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat-bold">
             Nuestro <span className="text-secondary">Equipo</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -86,10 +86,10 @@ const Team = () => {
               </div>
 
               {/* Información del miembro */}
-              <h3 className="text-2xl font-bold text-gray-800 mb-1 font-montserrat">
+              <h3 className="text-2xl font-bold text-gray-800 mb-1 font-montserrat-bold">
                 {member.name}
               </h3>
-              <p className="text-secondary font-semibold text-lg tracking-wide mb-4 font-montserrat uppercase drop-shadow-[0_1px_4px_theme('colors.primary'/0.33)]">
+              <p className="text-secondary font-bold text-lg tracking-wide mb-4 font-montserrat-bold uppercase drop-shadow-[0_1px_4px_theme('colors.primary'/0.33)]">
                 {member.role}
               </p>
             </div>
@@ -98,7 +98,7 @@ const Team = () => {
 
         {/* CTA opcional */}
         <div className="text-center mt-16">
-          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
+          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat-bold rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
             ÚNETE A NUESTRO EQUIPO
           </button>
         </div>
