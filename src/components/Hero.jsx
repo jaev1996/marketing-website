@@ -6,12 +6,12 @@ const Hero = () => {
       {/* Imagen de fondo con overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80"
+          src="/hero-bg.webp"
           alt="Marketing Digital Background"
           className="w-full h-full object-cover opacity-70"
         />
         {/* Overlay oscuro para mantener legibilidad */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/85 to-gray-950/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/75 to-gray-950/80"></div>
       </div>
 
       {/* Efecto de fondo degradado adicional */}
@@ -49,9 +49,9 @@ const Hero = () => {
         </p>
 
         {/* Botón con hover sofisticado */}
-        <button className="bg-secondary text-gray-900 font-montserrat-bold px-6 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-secondary/20 transform hover:scale-105">
+        <a href="https://wa.me/584242368587" target='_blank' className="bg-secondary text-gray-900 font-montserrat-bold px-6 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-secondary/20 transform hover:scale-105">
           COMIENZA AHORA
-        </button>
+        </a>
 
         {/* Flecha animada para scroll */}
         <div className="mt-20 animate-bounce">

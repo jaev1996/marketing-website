@@ -98,9 +98,12 @@ const Team = () => {
 
         {/* CTA opcional */}
         <div className="text-center mt-16">
-          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat-bold rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
+          <a
+            href="mailto:contacto@agencix.com?subject=Quiero%20unirme%20al%20equipo&body=Hola,%20quiero%20unirme%20a%20su%20equipo."
+            className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat-bold rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105"
+          >
             ÚNETE A NUESTRO EQUIPO
-          </button>
+          </a>
         </div>
       </div>
     </section>

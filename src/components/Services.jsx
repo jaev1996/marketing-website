@@ -135,9 +135,14 @@ const Services = () => {
           <p className="text-lg text-gray-800 mb-6">
             ¿Te interesa contratar algún servicio?
           </p>
-          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat-bold rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
+          <a
+            href="ENLACE_BROCHURE_AQUI"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat-bold rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105"
+          >
             DETALLES DE LOS SERVICIOS
-          </button>
+          </a>
         </div>
       </div>
     </section>

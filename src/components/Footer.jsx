@@ -1,5 +1,5 @@
-import { FiFacebook, FiInstagram, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
-import { FaXTwitter } from "react-icons/fa6";
+import { FiFacebook, FiInstagram, FiMail, FiPhone } from "react-icons/fi";
+import { FaTiktok } from "react-icons/fa6";
 import './montserrat.css';
 
 const Footer = () => {
@@ -7,16 +7,16 @@ const Footer = () => {
     {
       title: "Servicios",
       links: [
-        { name: "SEO y Posicionamiento", href: "#services" },
-        { name: "Publicidad Digital", href: "#services" },
-        { name: "Redes Sociales", href: "#services" }
+        { name: "Redes Sociales", href: "#services" },
+        { name: "Pauta de Fotos y Vídeos", href: "#services" },
+        { name: "Creación de sitios web", href: "#services" }
       ]
     },
     {
       title: "Empresa",
       links: [
         { name: "Sobre Nosotros", href: "#about" },
-        { name: "Portafolio", href: "#portfolio" },
+        { name: "Brochure", href: "#portfolio" },
         { name: "Testimonios", href: "#testimonials" }
       ]
     }
@@ -39,7 +39,7 @@ const Footer = () => {
               {[
                 { icon: <FiInstagram className="w-5 h-5" />, href: "https://instagram.com/eleva_digital", label: "Instagram de ELEVA" },
                 { icon: <FiFacebook className="w-5 h-5" />, href: "https://facebook.com/elevadigital", label: "Facebook de ELEVA" },
-                { icon: <FaXTwitter className="w-5 h-5" />, href: "https://tiktok.com/@eleva_digital", label: "TikTok de ELEVA" }
+                { icon: <FaTiktok className="w-5 h-5" />, href: "https://tiktok.com/@eleva_digital", label: "TikTok de ELEVA" }
               ].map((social, index) => (
                 <a
                   key={index}
@@ -61,9 +61,9 @@ const Footer = () => {
               <ul className="space-y-3">
                 {column.links.filter(link =>
                   (column.title === "Servicios" && [
-                    "SEO y Posicionamiento",
-                    "Publicidad Digital",
-                    "Redes Sociales"
+                    "Redes Sociales",
+                    "Pauta de Fotos y Vídeos",
+                    "Creación de sitios web"
                   ].includes(link.name)) ||
                   (column.title === "Empresa" && link.name !== "Blog")
                 ).map((link, i) => (

@@ -54,13 +54,6 @@ const Portfolio = () => {
             ))}
           </div>
         </div>
-
-        {/* CTA al final */}
-        <div className="text-center mt-16">
-          <button className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat-bold rounded-lg hover:bg-secondary/70 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105">
-            CONOCE NUESTROS SERVICIOS <FiArrowRight className="ml-2" />
-          </button>
-        </div>
       </div>
 
       {/* Estilos para la animación */}
