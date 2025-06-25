@@ -25,8 +25,17 @@ const MiniFAQ = () => {
     ];
 
     return (
-        <section id='minifaq' className="py-12 bg-black text-white">
-            <div className="container mx-auto px-4 py-4 max-w-3xl">
+        <section id='minifaq' className="relative py-12 bg-black text-white overflow-hidden">
+            {/* Imagen de fondo con overlay */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Fondo preguntas frecuentes"
+                    className="w-full h-full object-cover opacity-30"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/75 to-gray-950/80"></div>
+            </div>
+            <div className="container mx-auto px-4 py-4 max-w-3xl relative z-10">
                 <div className="text-center mb-8">
                     <span className="inline-block px-4 py-2 bg-secondary/30 text-secondary rounded-full text-sm font-semibold mb-4">
                         Resolvemos tus dudas

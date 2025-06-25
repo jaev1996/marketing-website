@@ -61,11 +61,12 @@ const About = () => {
 
           {/* Columna de imagen con overlay profesional */}
           <div className="lg:w-1/2 relative">
-            <div className="relative rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl h-[75%] max-h-[560px]">
               <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                alt="Equipo de AgenciaX trabajando"
-                className="w-full h-auto object-cover aspect-video lg:aspect-auto"
+                src="/eleva-post.webp"
+                alt="Imagen de Eleva Marketing Digital"
+                className="w-full object-cover h-full"
+                style={{ maxHeight: '560px' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-secondary/20"></div>
             </div>
