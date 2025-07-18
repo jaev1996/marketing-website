@@ -31,6 +31,12 @@ const Portfolio = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat-bold">
             Marcas que <span className="text-secondary">Confían</span> en Nosotros
           </h2>
+          {/* Bloque destacado */}
+          <div className="mt-8 mx-auto max-w-2xl bg-secondary/20 border-l-4 border-secondary px-6 py-4 rounded-lg shadow font-montserrat-bold text-lg text-gray-900">
+
+            <span className="block text-secondary font-extrabold mb-2 tracking-widest"> En Eleva tenemos el privilegio de colaborar con marcas en diferentes etapas y sectores</span>
+            Desde negocios consolidados que buscan renovarse e innovar, hasta emprendimientos que están dando sus primeros pasos y necesitan acompañamiento estratégico, creativo y funcional.
+          </div>
         </div>
 
         {/* Carrusel de logos mejorado */}

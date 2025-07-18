@@ -60,9 +60,11 @@ const Team = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat-bold">
             Nuestro <span className="text-secondary">Equipo</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Mentes que convierten ideas en resultados
-          </p>
+          {/* Bloque destacado */}
+          <div className="mt-8 mx-auto max-w-2xl bg-secondary/10 border-l-4 border-secondary px-6 py-4 rounded-lg shadow font-montserrat-bold text-lg text-gray-900">
+            <span className="block text-secondary font-extrabold mb-2 tracking-widest">Mentes que convierten ideas en resultados</span>
+            Poder contar con profesionales que son capaces de hacer lo mejor, es la diferencia entre un resultado bueno y un resultado excepcional.
+          </div>
         </div>
 
         {/* Grid del equipo */}
