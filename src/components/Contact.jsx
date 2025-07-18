@@ -76,8 +76,8 @@ const Contact = () => {
           <span className="inline-block px-4 py-2 bg-secondary text-gray-800 rounded-full text-sm font-semibold mb-4">
             Contacto Directo
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat-bold">
-            Hablemos de tu <span className="text-secondary">proyecto</span>
+          <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4 font-montserrat-bold">
+            Hablemos de tu <span className="text-secondary uppercase">proyecto</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto font-montserrat-regular">
             Elige tu método preferido o envíanos un mensaje directo

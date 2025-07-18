@@ -3,49 +3,39 @@ const Team = () => {
   // Datos del equipo (puedes reemplazar con los reales)
   const teamMembers = [
     {
-      name: "María González",
-      role: "CEO & Fundadora",
-      photo: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&auto=format&fit=crop&q=60",
+      name: "Arianny Morales",
+      role: "Directora Creativa",
+      photo: "/team/arianny.webp",
     },
     {
-      name: "Carlos Rodríguez",
-      role: "Director de Marketing",
-      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60",
+      name: "Daniela Flores",
+      role: "Social Media Manager - Supervisora",
+      photo: "/team/daniela.webp",
     },
     {
-      name: "Ana Martínez",
-      role: "Diseñadora Principal",
-      photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=60",
+      name: "Oliver Martínez",
+      role: "Desarrollador Audiovisual",
+      photo: "/team/oliver.webp",
     },
     {
-      name: "Javier López",
-      role: "Desarrollador Senior",
-      photo: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=500&auto=format&fit=crop&q=60",
+      name: "Arianny Azuaje",
+      role: "Diseñadora Gráfica",
+      photo: "https://ui-avatars.com/api/?name=A+Azuaje&background=cccccc&color=555555&rounded=true&size=128",
     },
     {
-      name: "Sofía Pérez",
-      role: "Especialista SEO",
-      photo: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=500&auto=format&fit=crop&q=60",
-    },
-    {
-      name: "Clara Fernández",
-      role: "Gerente de Cuentas",
-      photo: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=500&auto=format&fit=crop&q=60",
-    },
-    {
-      name: "Elena Sánchez",
-      role: "Content Manager",
-      photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60",
-    },
-    {
-      name: "Pablo Gómez",
-      role: "Analista de Datos",
-      photo: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=500&auto=format&fit=crop&q=60",
-    },
-    {
-      name: "Lucía Díaz",
+      name: "Yimberly Andrade",
       role: "Community Manager",
-      photo: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&auto=format&fit=crop&q=60",
+      photo: "https://ui-avatars.com/api/?name=Y+Andrade&background=cccccc&color=555555&rounded=true&size=128",
+    },
+    {
+      name: "Felipe Botero",
+      role: "Trafficker",
+      photo: "https://ui-avatars.com/api/?name=F+Botero&background=cccccc&color=555555&rounded=true&size=128",
+    },
+    {
+      name: "Yorlen Batista",
+      role: "Contadora",
+      photo: "https://ui-avatars.com/api/?name=Y+Batista&background=cccccc&color=555555&rounded=true&size=128",
     },
   ];
 
@@ -54,16 +44,16 @@ const Team = () => {
       <div className="container mx-auto px-4">
         {/* Encabezado con estilo consistente */}
         <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-semibold text-gray-800 bg-secondary rounded-full mb-4">
-            Conoce al equipo
+          <span className="inline-block px-3 py-1 text-sm font-semibold text-gray-800 bg-secondary rounded-full mb-4 uppercase">
+            CONOCE AL EQUIPO
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat-bold">
-            Nuestro <span className="text-secondary">Equipo</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat-bold uppercase">
+            Nuestro <span className="text-secondary uppercase">Equipo</span>
           </h2>
-          {/* Bloque destacado */}
-          <div className="mt-8 mx-auto max-w-2xl bg-secondary/10 border-l-4 border-secondary px-6 py-4 rounded-lg shadow font-montserrat-bold text-lg text-gray-900">
-            <span className="block text-secondary font-extrabold mb-2 tracking-widest">Mentes que convierten ideas en resultados</span>
-            Poder contar con profesionales que son capaces de hacer lo mejor, es la diferencia entre un resultado bueno y un resultado excepcional.
+          {/* Bloque destacado con formato Portfolio */}
+          <div className="mt-8 mx-auto w-full max-w-4xl lg:max-w-6xl text-center">
+            <span className="inline-block text-secondary font-extrabold mb-2 tracking-widest text-base md:text-lg font-montserrat-bold uppercase whitespace-nowrap">Mentes que convierten ideas en resultados</span>
+            <span className="block text-gray-900 text-base md:text-lg font-montserrat-regular">Poder contar con profesionales que son capaces de hacer lo mejor, es la diferencia entre un resultado bueno y un resultado excepcional.</span>
           </div>
         </div>
 
@@ -80,7 +70,8 @@ const Team = () => {
                   <img
                     src={member.photo}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    style={{objectPosition: 'top center'}}
                   />
                   {/* Sombra que sigue el contorno de la foto */}
                   <div className="absolute inset-0 rounded-full shadow-[0_0_0_0_rgba(202,210,189,0.4)] group-hover:shadow-[0_0_0_8px_rgba(186,197,170,0.2)] transition-all duration-500 pointer-events-none"></div>

@@ -111,7 +111,7 @@ const Services = () => {
           <span className="inline-block px-3 py-1 text-sm font-semibold text-gray-800 bg-secondary rounded-full mb-4">
             Lo que ofrecemos
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-montserrat-bold">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 uppercase font-montserrat-bold">
             Nuestros <span className="text-secondary">Servicios</span>
           </h2>
           <p className="text-xl text-gray-800 max-w-2xl mx-auto font-montserrat-regular">
@@ -136,7 +136,7 @@ const Services = () => {
             ¿Te interesa contratar algún servicio?
           </p>
           <a
-            href="ENLACE_BROCHURE_AQUI"
+            href="https://drive.google.com/file/d/1uhDwJda7NUhCk2rUj6f9O8KkCO3Hk3eQ/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-3 bg-secondary text-gray-900 font-montserrat-bold rounded-lg hover:bg-secondary/80 transition-all shadow-lg hover:shadow-secondary/30 transform hover:scale-105"

@@ -40,7 +40,7 @@ const MiniFAQ = () => {
                     <span className="inline-block px-4 py-2 bg-secondary/30 text-secondary rounded-full text-sm font-semibold mb-4">
                         Resolvemos tus dudas
                     </span>
-                    <h3 className="text-3xl md:text-4xl font-bold font-montserrat-bold mb-2">Preguntas Frecuentes</h3>
+                    <h3 className="text-3xl md:text-4xl font-bold uppercase font-montserrat-bold mb-2">Preguntas Frecuentes</h3>
                     <p className="text-gray-400 text-lg font-montserrat-regular">Respuestas rápidas a tus dudas más comunes</p>
                 </div>
                 <div className="space-y-4">
