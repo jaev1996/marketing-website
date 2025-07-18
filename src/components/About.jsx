@@ -12,7 +12,7 @@ const About = () => {
               ¡Eleva tu Presencia Digital con Nosotros!
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight font-montserrat-bold text-white">
+            <h2 className="uppercase text-4xl md:text-5xl font-bold leading-tight font-montserrat-bold text-white">
               ¿Quienes Somos?
             </h2>
 

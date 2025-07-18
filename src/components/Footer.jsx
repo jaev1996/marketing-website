@@ -105,7 +105,7 @@ const Footer = () => {
             </p>
             <div className="flex flex-col md:flex-row md:space-x-6 text-sm text-secondary items-center">
               <div className="flex items-center gap-2 font-montserrat-regular">
-                <FiMail className="w-4 h-4" /> contacto@agencix.com
+                <FiMail className="w-4 h-4" /> info@eleva.marketing
               </div>
               <div className="flex items-center gap-2 font-montserrat-regular">
                 <FiPhone className="w-4 h-4" /> +58 424 2368587

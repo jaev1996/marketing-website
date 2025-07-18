@@ -75,9 +75,14 @@ const Navbar = () => {
           </ul>
 
           {/* Botón de contacto (solo desktop) */}
-          <button className="hidden md:block bg-secondary text-gray-900 font-montserrat-bold px-6 py-2 rounded-lg font-medium hover:bg-secondary/90 transition-all shadow-lg hover:shadow-secondary/20">
+          <a
+            href="https://wa.me/584242368587"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:block bg-secondary text-gray-900 font-montserrat-bold px-6 py-2 rounded-lg font-medium hover:bg-secondary/90 transition-all shadow-lg hover:shadow-secondary/20"
+          >
             ¡Hablemos!
-          </button>
+          </a>
 
           {/* Botón de menú móvil */}
           <button

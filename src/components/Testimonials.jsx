@@ -7,28 +7,25 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Carlos Pérez",
-      role: "CEO de ModaFashion",
-      quote: "Increíble trabajo con nuestra campaña en Instagram. En 3 meses aumentamos un 150% en ventas.",
-      image: "https://randomuser.me/api/portraits/men/30.jpg",
-      rating: 5,
-      results: ["+150% ventas", "+300% comunidad"]
+      name: "Christian de Freitas",
+      role: "CEO de Brasero",
+      quote: "Las redes sociales se están pagando solas. En 3 meses, alcanzamos obtener presencia digital y llegar a nuestras metas de ventas mensuales y el flujo de personas en el local aumentó notablemente",
+      image: "/marcas/Brasero-negro.png",
+      rating: 5
     },
     {
-      name: "María González",
-      role: "Directora de Marketing",
-      quote: "La estrategia de contenidos revolucionó nuestro engagement en redes sociales.",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      rating: 5,
-      results: ["+200% engagement", "+120% seguidores"]
+      name: "CEO de Once",
+      role: "",
+      quote: "Pasamos de 27K a 32K seguidores en solo 2 meses y, aumentamos las ventas durante los días de semana, cuando antes solo facturábamos de jueves a domingo.",
+      image: "/marcas/ONCE NEGRO.png",
+      rating: 5
     },
     {
-      name: "Javier Rodríguez",
-      role: "Fundador de TechStart",
-      quote: "El rediseño de nuestra identidad visual capturó perfectamente nuestra esencia innovadora.",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
-      rating: 5,
-      results: ["+90% reconocimiento", "Premio al mejor diseño"]
+      name: "Jessica",
+      role: "Directora de Almendrina",
+      quote: "Estoy contenta con el contenido, han mostrado el valor y la esencia de nuestro negocio",
+      image: "/marcas/almendrina.png",
+      rating: 5
     }
   ];
 
@@ -40,8 +37,8 @@ const Testimonials = () => {
           <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
             Confían en nosotros
           </span>
-          <h2 className="text-4xl md:text-5xl font-montserrat-bold mb-4">
-            Voces de <span className="text-secondary">nuestros clientes</span>
+          <h2 className="text-4xl md:text-5xl uppercase font-montserrat-bold mb-4">
+            Voces de <span className="text-secondary uppercase">nuestros clientes</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto font-montserrat-regular">
             Experiencias reales que reflejan nuestro compromiso
@@ -74,7 +71,8 @@ const Testimonials = () => {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full border-2 border-primary mr-4"
+                    className="w-12 h-12 rounded-full border-2 border-primary mr-4 object-contain bg-white p-1"
+                    style={{objectFit: 'contain', backgroundColor: 'white'}}
                     loading="lazy"
                   />
                   <div>
