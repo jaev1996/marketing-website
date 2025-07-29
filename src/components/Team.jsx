@@ -18,14 +18,14 @@ const Team = () => {
       photo: "/team/oliver.webp",
     },
     {
+      name: "Yimberly Andrade",
+      role: "Community Manager",
+      photo: "/team/yimberly.webp",
+    },
+    {
       name: "Arianny Azuaje",
       role: "Diseñadora Gráfica",
       photo: "https://ui-avatars.com/api/?name=A+Azuaje&background=cccccc&color=555555&rounded=true&size=128",
-    },
-    {
-      name: "Yimberly Andrade",
-      role: "Community Manager",
-      photo: "https://ui-avatars.com/api/?name=Y+Andrade&background=cccccc&color=555555&rounded=true&size=128",
     },
     {
       name: "Felipe Botero",
@@ -71,7 +71,7 @@ const Team = () => {
                     src={member.photo}
                     alt={member.name}
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                    style={{objectPosition: 'top center'}}
+                    style={{ objectPosition: 'top center' }}
                   />
                   {/* Sombra que sigue el contorno de la foto */}
                   <div className="absolute inset-0 rounded-full shadow-[0_0_0_0_rgba(202,210,189,0.4)] group-hover:shadow-[0_0_0_8px_rgba(186,197,170,0.2)] transition-all duration-500 pointer-events-none"></div>
