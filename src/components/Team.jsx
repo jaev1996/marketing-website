@@ -23,9 +23,9 @@ const Team = () => {
       photo: "/team/yimberly.webp",
     },
     {
-      name: "Arianny Azuaje",
+      name: "Aryanny Azuaje",
       role: "Diseñadora Gráfica",
-      photo: "https://ui-avatars.com/api/?name=A+Azuaje&background=cccccc&color=555555&rounded=true&size=128",
+      photo: "/team/aryanny.webp",
     },
     {
       name: "Felipe Botero",
