@@ -23,6 +23,11 @@ const Team = () => {
       photo: "/team/yimberly.webp",
     },
     {
+      name: "Rafnell Muro",
+      role: "Community Manager",
+      photo: "/team/rafnell-muro.webp",
+    },
+    {
       name: "Aryanny Azuaje",
       role: "Diseñadora Gráfica",
       photo: "/team/aryanny.webp",

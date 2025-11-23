@@ -32,10 +32,6 @@ export const services = [
     description: "Capturamos momentos inolvidables, generamos contenido impactante a través de fotografía y vídeo, como cumpleaños, videoclips, eventos."
   },
   {
-    title: "Vendedoras",
-    description: "Contamos con un equipo de vendedoras capacitadas, listas para impulsar tus productos o servicios. Ellas se encargan de atender consultas y cerrar ventas para tu negocio, trabajando a comisión. Solo ganan si tú ganas.",
-  },
-  {
     title: "Email Marketing",
     description: "Te permite comunicarte directamente con tu público mediante mensajes personalizados, mantenerlos informados sobre tus productos, promociones y aumentar tus ventas de forma sencilla y económica."
   },
@@ -44,4 +40,3 @@ export const services = [
     description: "Un bot te ayuda a responder a tus clientes de manera rápida y automática, las 24 horas del día. Así, puedes brindar un mejor servicio, ahorrar tiempo y concentrarte en lo que realmente importa para tu negocio."
   }
 ];
-      

@@ -5,16 +5,12 @@ const Portfolio = () => {
   // Logos de clientes reales (archivos locales en public/marcas)
   const clients = [
     { logo: "/marcas/almendrina.png" },
-    { logo: "/marcas/arisa-8.png" },
+    { logo: "/marcas/arisa-negro.PNG" },
     { logo: "/marcas/bellisima-negro-8.png" },
     { logo: "/marcas/Brasero-negro.png" },
-    { logo: "/marcas/contrucolor-8.png" },
-    { logo: "/marcas/dibar-negro-8.png" },
-    { logo: "/marcas/GREEN CITY 1-8.png" },
-    { logo: "/marcas/lola-negro-8.png" },
-    { logo: "/marcas/mapa-8.png" },
     { logo: "/marcas/ONCE NEGRO.png" },
-    { logo: "/marcas/polemico-negro-8.png" },
+    { logo: "/marcas/muro-negro.PNG" },
+    { logo: "/marcas/legion-dorado.png" },
   ];
 
   // Duplicamos los logos para crear el efecto de carrusel infinito
