@@ -61,12 +61,12 @@ const About = () => {
 
           {/* Columna de imagen con overlay profesional */}
           <div className="lg:w-1/2 relative">
-            <div className="relative rounded-xl overflow-hidden shadow-2xl h-[75%] max-h-[560px]">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl h-[85%] max-h-[680px]">
               <img
                 src="/eleva-post.webp"
                 alt="Imagen de Eleva Marketing Digital"
                 className="w-full object-cover h-full"
-                style={{ maxHeight: '560px' }}
+                style={{ maxHeight: '680px' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-secondary/20"></div>
             </div>
