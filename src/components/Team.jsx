@@ -5,7 +5,7 @@ const Team = () => {
     {
       name: "Arianny Morales",
       role: "Directora Creativa",
-      photo: "/team/arianny.webp",
+      photo: "/team/arianny.jpg",
     },
     {
       name: "Daniela Flores",
