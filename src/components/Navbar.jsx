@@ -23,14 +23,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/90 backdrop-blur-md py-2 shadow-xl" : "bg-gray-950 py-4"}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/90 backdrop-blur-md py-2 shadow-xl" : "bg-gray-950 py-3 md:py-4"}`}>
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
-          {/* Logo con efecto hover */}
+        <div className="flex justify-between items-center gap-2">
+          {/* Logo con efecto hover - más compacto en móvil */}
           <a
             href="#"
-            className="flex items-center group"
-            style={{ minHeight: '48px' }}
+            className="flex items-center group flex-shrink-0"
             onClick={e => {
               e.preventDefault();
               const el = document.querySelector('body');
@@ -42,7 +41,7 @@ const Navbar = () => {
             <img
               src="/eleva.png"
               alt="Logo ELEVA"
-              className="h-12 w-auto transition-all duration-300 drop-shadow-none group-hover:drop-shadow-[0_0_16px_var(--tw-shadow-color)]"
+              className="h-10 md:h-12 w-auto transition-all duration-300 drop-shadow-none group-hover:drop-shadow-[0_0_16px_var(--tw-shadow-color)]"
               style={{
                 filter: 'drop-shadow(0 0 0 transparent)',
                 '--tw-shadow-color': 'rgba(186,197,170,0.7)'
@@ -84,12 +83,14 @@ const Navbar = () => {
             ¡Hablemos!
           </a>
 
-          {/* Botón de menú móvil */}
+          {/* Botón de menú móvil - más grande y accesible */}
           <button
-            className="md:hidden text-white focus:outline-none"
+            className="md:hidden text-white focus:outline-none p-2 -mr-2 flex-shrink-0 hover:bg-white/10 rounded-lg transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={mobileMenuOpen}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -123,9 +124,15 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <button className="w-full bg-secondary text-gray-900 font-montserrat-bold px-4 py-2 rounded-lg font-medium mt-2 hover:bg-secondary/80 transition-colors shadow-lg hover:shadow-secondary/30">
-                Contactar
-              </button>
+              <a
+                href="https://wa.me/584242368587"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-secondary text-gray-900 font-montserrat-bold px-4 py-3 rounded-lg font-medium mt-2 hover:bg-secondary/80 transition-colors shadow-lg hover:shadow-secondary/30 text-center"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                ¡Hablemos!
+              </a>
             </li>
           </ul>
         </div>
