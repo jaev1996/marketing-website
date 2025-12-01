@@ -3,14 +3,41 @@ import './montserrat.css';
 const Hero = () => {
   return (
     <section className="relative bg-gradient-to-br from-gray-950 to-gray-900 text-white min-h-screen flex items-center overflow-hidden">
-      {/* Imagen de fondo con overlay */}
+      {/* Video de fondo con overlay oscuro para legibilidad */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/hero-bg.webp"
-          alt="Marketing Digital Background"
-          className="w-full h-full object-cover opacity-70"
-        />
-        {/* Overlay oscuro para mantener legibilidad */}
+        {/* Video horizontal para desktop/laptop */}
+        <video
+          className="hidden md:block w-full h-full object-cover opacity-70"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/hero-bg.webp"
+          aria-label="Video de fondo - Marketing Digital"
+        >
+          <source src="/videos/horizontal-hero.webm" type="video/webm" />
+          {/* Fallback para navegadores que no soporten video */}
+          Tu navegador no soporta videos HTML5.
+        </video>
+
+        {/* Video vertical para móvil */}
+        <video
+          className="block md:hidden w-full h-full object-cover opacity-70"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/hero-bg.webp"
+          aria-label="Video de fondo - Marketing Digital"
+        >
+          <source src="/videos/vertical-hero.webm" type="video/webm" />
+          {/* Fallback para navegadores que no soporten video */}
+          Tu navegador no soporta videos HTML5.
+        </video>
+
+        {/* Overlay oscuro para mantener legibilidad del texto */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/75 to-gray-950/80"></div>
       </div>
 
